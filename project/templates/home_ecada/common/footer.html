@@ -1,0 +1,126 @@
+{% load staticfiles %}
+<!-- START - Footer -->
+        <footer>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="footer-brand">
+                                <p><a href="#">WeproBPO</a> &copy; 2018 - All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- END - Footer -->
+
+        <!-- START - to top -->
+        <a href="#" class="toTop">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+        <!-- END - to top -->
+
+        <!-- jQuery -->
+        <script src="{% static 'landing_page_ecada/js/jquery.min.js' %}"></script>
+
+        <!-- BOOTSTRAP -->
+        <script src="{% static 'landing_page_ecada/js/bootstrap/js/bootstrap.min.js' %}"></script>
+
+        <!-- jQuery Easing -->
+        <script src="{% static 'landing_page_ecada/js/jquery.easing-1.3.min.js' %}"></script>
+        
+        <!-- REVOLUTION SLIDER -->
+        <script type="text/javascript" src="{% static 'landing_page_ecada/js/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'landing_page_ecada/js/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+        <script type='text/javascript' src="{% static 'landing_page_ecada/js/revolution/revolution-addons/slicey/js/revolution.addon.slicey.min.js?ver=1.0.0' %}"></script>
+        <script type="text/javascript" src="{% static 'landing_page_ecada/js/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'landing_page_ecada/js/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'landing_page_ecada/js/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+        <script>
+            $(document).ready(function() {
+                if ($("#rev-slider").revolution != undefined) {
+                    $("#rev-slider").revolution({
+                        sliderType: "standard",
+                        sliderLayout: "auto",
+                        delay: 9000,
+                        navigation: {
+                            keyboardNavigation: "on",
+                            keyboard_direction: "horizontal",
+                            mouseScrollNavigation: "off",
+                            onHoverStop: "off",
+                            touch: {
+                                touchenabled: "on",
+                                swipe_threshold: 75,
+                                swipe_min_touches: 1,
+                                swipe_direction: "horizontal",
+                                drag_block_vertical: false
+                            },
+                            arrows: {
+                                style: "hephaistos",
+                                enable: true,
+                                hide_onmobile: false,
+                                hide_onleave: false,
+                                tmp: '',
+                                left: {
+                                    h_align: "left",
+                                    v_align: "center",
+                                    h_offset: 30,
+                                    v_offset: 0
+                                },
+                                right: {
+                                    h_align: "right",
+                                    v_align: "center",
+                                    h_offset: 30,
+                                    v_offset: 0
+                                }
+                            },
+                            bullets: {
+                                enable: true,
+                                hide_onmobile: false,
+                                style: "hephaistos",
+                                hide_onleave: false,
+                                direction: "horizontal",
+                                h_align: "center",
+                                v_align: "bottom",
+                                h_offset: 20,
+                                v_offset: 30,
+                                space: 5,
+                                tmp: ''
+                            }
+                        },
+                        gridwidth: 1230,
+                        gridheight: 720
+                    });
+                }
+            });
+        </script>
+
+        <!-- Parallax -->
+        <script src="{% static 'landing_page_ecada/js/parallax/jquery.parallax-1.1.3.js' %}"></script>
+        <script src="{% static 'landing_page_ecada/js/parallax/setting.js' %}"></script>
+
+        <!-- Owl Carousel -->
+        <script src="{% static 'landing_page_ecada/js/owlcarousel/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'landing_page_ecada/js/owlcarousel/js/setting.js' %}"></script>
+
+        <!-- PrettyPhoto -->
+        <script src="{% static 'landing_page_ecada/js/prettyPhoto/js/jquery.prettyPhoto.js' %}"></script>
+        <script src="{% static 'landing_page_ecada/js/prettyPhoto/js/setting.js' %}"></script>
+
+        <!-- Masonry -->
+        <script src="{% static 'landing_page_ecada/js/masonry/js/masonry.min.js' %}"></script>
+        <script src="{% static 'landing_page_ecada/js/masonry/js/masonry.filter.js' %}"></script>
+        <script src="{% static 'landing_page_ecada/js/masonry/js/setting.js' %}"></script>
+
+        <!-- Custom JavaScript for this theme -->
+        <script src="{% static 'landing_page_ecada/js/custom.js' %}"></script>
+
+        <!-- Nicescroll -->
+        <script src="{% static 'landing_page_ecada/js/nicescroll/jquery.nicescroll.min.js' %}"></script>
+        <script src="{% static 'landing_page_ecada/js/nicescroll/settings.js' %}"></script>
+
+        <!-- Theme option-->
+        <script src="{% static 'landing_page_ecada/js/style-switcher/js/style-switcher.js' %}"></script>
+    </body>
+</html>

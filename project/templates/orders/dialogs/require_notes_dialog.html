@@ -1,0 +1,21 @@
+<div ng-class="main.page_loader.dialog ? 'panel panel-success clean sk-loading' : 'panel panel-success clean noheight'">
+    {% include "common/loader.html" %}
+    <div class="panel-heading">
+        <h3 class="panel-title">{$ (main.require_notes_notes) ? 'Notes' : 'QC' $} Remarks</h3>
+        <a class="btn btn-lg pull-right margin_top_reverse_30 white" ng-click="main.close_dialog(false,true)"><i class="fa fa-times fa-lg"></i></a>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <form class="form" name="form">
+                <div class="col-sm-12">
+                    <textarea rows="4" ng-model="main.record.notes" class="form-control"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-sm btn-success btn-w-m" ng-if="main.require_notes_notes" ng-click="main.create_notes_multiple(main.record.notes)">Save</button>
+        <button class="btn btn-sm btn-success btn-w-m" ng-if="main.require_notes_qc" ng-click="main.create_qc_multiple(main.record.notes)">Save</button>
+    </div>
+</div>
+

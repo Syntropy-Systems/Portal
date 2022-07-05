@@ -1,0 +1,90 @@
+{% block page_header %}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-8">
+        <h2>{{page_name}}</h2>
+    </div>
+    <div class="col-sm-4">
+            <button class="btn btn-w-m btn-primary btn-sm pull-right margin_top_20" ng-click="main.create_dialog()">Create</button>
+        </div>
+</div>
+{% endblock %}
+<div class="row wrapper wrapper-content animated fadeIn" ng-cloak="">
+    <div class="ibox">
+        <div class="ibox-content" ng-class="main.page_loader.main ? 'sk-loading' : ''">
+            {% include "common/loader.html" %}
+            <!-- Content Here -->
+            <div class="row">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <select class="form-control" ng-model="main.filters.status" ng-change="main.read_pagination()">
+                            <option value="unpaid">Unpaid</option>
+                            <option value="paid">Paid</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 pull-right">
+                        <div class="input-group">
+                            <input type="text" ng-model="main.filters.name" class="form-control input-md" on-enter="main.main_loader();" placeholder="Search..." dedong="alde">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="button" ng-click="main.main_loader();"><i class="fa fa-search"></i></button>
+                                <button class="btn btn-default" type="button" ng-click="main.main_loader(true);"><i class="fa fa-refresh"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table" id="table" ng-class="(loading == true) ? 'table_loading' : '' ">
+                    <thead>
+                        <tr class="hdr_border_r">
+                            <th width="10%">Invoice No.</th>
+                            <th width="15%">Client</th>
+                            <th width="10%">Date</th>
+                            <th width="10%">Total / <br> # of orders</th>
+                            <th width="20%">Remarks</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="record in main.records" class="tr_gray">
+                            <td class="hand_cursor"><a href="" ng-click="main.create_dialog(record)">{$ record.reference_no $}</a></td>
+                            <td>{$ record.client.fullname $}</td>
+                            <td>{$ record.date | date $}</td>
+                            <td align="right"><b>{$ record.total | currency $}</b> <br> <i>{$ record.order_count $} orders</i></td>
+                            <td>{$ record.client.remarks $}</td>
+                            <td>
+                                <div class="input-group-btn" uib-dropdown>
+                                   <button  ng-if="record.status == 'Paid'" 
+                                            class="btn btn-success btn-sm btn-w-m" 
+                                            ng-click="main.mark_as_paid(record)">
+                                        Mark as Unpaid
+                                    </button>
+                                    <button ng-if="record.status == 'Unpaid'" 
+                                            class="btn btn-success btn-sm btn-w-m" 
+                                            ng-click="main.mark_as_paid(record)">
+                                        Mark as Paid
+                                    </button>
+                                    <button ng-if="record.is_active" 
+                                            class="btn btn-sm btn-outline btn-danger" 
+                                            uib-dropdown-toggle 
+                                            type="button">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <button     ng-if="!record.is_active" 
+                                                class="btn btn-sm btn-outline btn-success" 
+                                                uib-dropdown-toggle 
+                                                type="button">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul uib-dropdown-menu>
+                                        <li><a href="/export/invoice/{$ record.id $}" target="_blank">Export</a></li>
+                                        <li ng-if="!record.is_active"><a href="" ng-click="main.delete(record)">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination></pagination>
+            </div>
+            <br><br><br><br>
+        </div>
+    </div>
+</div>

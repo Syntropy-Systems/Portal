@@ -1,0 +1,127 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="keywords" content="corporate html template - agency theme - business html template - creative theme - portfolio html template - gallery theme - restaurant theme - ecommerce template - app template - landing page - real estate theme">
+        <meta name="description" content="Bootstrap HTML5 template for agency, corporate, business, app and creative portfolio, it is suitable for any kind of websites, like ecommerce, restaurant, photography, gallery and retail website.">
+        <meta name="author" content="encodeslife">
+        <link rel="icon" href="img/favicon.png' %}">
+
+        <title>WeproBPO</title>
+
+        <!-- BOOTSTRAP -->
+        <link href="{% static 'landing_page_ecada/js/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- REVOLUTION SLIDER MAIN STYLESHEET -->
+        <link rel="stylesheet" type="text/css" href="{% static 'landing_page_ecada/css/revolution/settings.css' %}">
+
+        <!-- REVOLUTION SLIDER LAYERS AND NAVIGATION STYLES -->
+        <link rel="stylesheet" type="text/css" href="{% static 'landing_page_ecada/css/revolution/layers.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'landing_page_ecada/css/revolution/navigation.css' %}">
+
+        <!-- CUSTOM STYLES -->
+        <link href="{% static 'landing_page_ecada/css/style.css' %}" rel="stylesheet">
+
+        <!-- THEME SKINS -->
+        <link id="skin" href="{% static 'landing_page_ecada/css/theme-colors/orange.css' %}" rel="stylesheet">
+        <link href="{% static 'landing_page_ecada/js/style-switcher/css/style-switcher.css' %}" rel="stylesheet">
+        <link href="{% static 'landing_page_ecada/css/line-icons/line-icons.css' %}" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="{% static 'landing_page_ecada/js/html5shiv.min.js' %}"></script>
+            <script src="{% static 'landing_page_ecada/js/respond.min.js' %}"></script>
+        <![endif]-->
+
+        <!--[if IE 9]>
+            <link href="css/ie.css" rel="stylesheet">
+        <![endif]-->
+    </head>
+
+    <body>
+        <!-- START - Style Switcher -->
+        <i class="style-switcher-btn fa fa-cogs hidden-xs"></i>
+        <div class="style-switcher animated fadeInRight">
+            <div class="style-switcher-header">
+                <div class="style-switcher-heading">Style Switcher</div>
+                <div class="style-switcher-close"><i class="icon-close"></i></div>
+            </div>
+            <div class="style-switcher-body">
+                <!-- Theme Colors -->
+                <div class="style-switcher-heading">Theme Colors</div>
+                <ul class="list-unstyled">
+                    <li class="theme-orange theme-active" data-style="orange" data-header="light"></li>
+                    <li class="theme-red" data-style="red" data-header="light"></li>
+                    <li class="theme-dark-red" data-style="dark-red" data-header="light"></li>
+                    <li class="theme-aqua" data-style="aqua" data-header="light"></li>
+                    <li class="theme-blue" data-style="blue" data-header="light"></li>
+                    <li class="theme-dark-blue last" data-style="dark-blue" data-header="light"></li>
+                    <li class="theme-purple" data-style="purple" data-header="light"></li>
+                    <li class="theme-brown" data-style="brown" data-header="light"></li>
+                    <li class="theme-yellow" data-style="yellow" data-header="light"></li>
+                    <li class="theme-light-green" data-style="light-green" data-header="light"></li>
+                    <li class="theme-teal" data-style="teal" data-header="light"></li>
+                    <li class="theme-green last" data-style="green" data-header="light"></li>
+                </ul>
+                <div class="style-switcher-heading">Header Color</div>
+                <button type="button" class="btn-e btn-e-primary btn-sm margin-bottom-15 margin-right-10 header-light">Light</button>
+                <button type="button" class="btn-e btn-e-primary btn-sm margin-bottom-15 header-dark">Dark</button>
+            </div>
+        </div>
+        <!-- END - Style Switcher -->
+
+        <!-- START - Top area -->
+        <div class="top-container">
+            <div class="container">
+                <div class="top-column-left">
+                    <ul class="contact-line">
+                        <li><i class="fa fa-envelope"></i> weprobpo@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="top-column-right">
+                    <ul class="register">
+                        <li><a href="/login/#register">Register</a></li>
+                        <li><a href="/login/">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END - Top area -->
+
+        <div class="clearfix"></div>
+
+        <!-- START - Navbar -->
+        <nav class="navbar navbar-default navbar-dark megamenu">
+            <div class="container">
+
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand logo" href="/landingpage">
+                        <!-- <img src="{% static 'landing_page_ecada/img/themes/logo-orange.png' %}" alt="Logo" /> -->
+                        <img src="{% static 'landing_page_ecada/img/themes/weprologo.png' %}" alt="Logo" />
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <!-- <li>
+                            <a href="#contact_us">Contact Us</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>

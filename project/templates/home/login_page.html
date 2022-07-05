@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html ng-app="login_page">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title page-title>Welcome to WeProBPO</title>
+    {% include "css_loader.html" %}
+
+    <style type="text/css">
+        .big-icon {
+          font-size: 160px !important;
+          color: #18a689;
+        }
+    </style>
+</head>
+<!-- ControllerAs syntax -->
+<!-- Main controller with serveral data used in Inspinia theme on diferent view -->
+
+<body id="page-top">
+    <div class="middle-box text-center loginscreen  animated fadeInDown" ng-cloak="" ng-controller="loginCtrl as main">
+        <div>
+            <!-- <div>
+                <h3 class="logo-name">WePro BPO</h3>
+            </div> -->
+            <br><br><br><br>
+            <form class="m-t">
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Username" required="" ng-model="main.login_data.email">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" required="" ng-model="main.login_data.password" on-enter="main.login()">
+                </div>
+                <button type="button" ng-click="main.login()" class="btn btn-primary block full-width m-b">Login</button>
+
+                <!-- <a ui-sref="forgot_password"><small>Forgot password?</small></a> -->
+                <p class="text-muted text-center"><small>Do not have an account?</small></p>
+                <a class="btn btn-sm btn-white btn-block" ng-click="main.registration_dialog()">Create an account</a>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="pull-right">
+            <strong>Copyright</strong> &copy; 2022-2023
+        </div>
+    </div>
+    <toaster-container></toaster-container>
+    {% csrf_token %}
+</body>
+</html>
+{% include "footer.html" %}
+{% block loader_js_bottom %}
+    <script type="text/javascript" src="{% static 'js/login.js' %}?ver=1"></script>
+{% endblock %}
+
+
+<!--  -->

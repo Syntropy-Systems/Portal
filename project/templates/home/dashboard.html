@@ -1,0 +1,19 @@
+<div class="row wrapper wrapper-content animated fadeIn" ng-cloak="">
+    <div class="ibox">
+        <div class="ibox-content" ng-class="main.page_loader.main ? 'sk-loading' : ''">
+        	{% include "common/loader.html" %}
+            <!-- Content Here -->
+            <div class="row">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title titlee">
+                        <h5>Schedules</h5>
+                    </div>
+                    <div class="ibox-content ui-calendar col-sm-12 col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+                        <div ui-calendar="uiConfig.calendar" calendar="myCalendar1" id="calendar" ng-model="main.eventSources" style="width: 100%; height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br>
+        </div>
+    </div>
+</div>

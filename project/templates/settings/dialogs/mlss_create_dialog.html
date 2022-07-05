@@ -1,0 +1,52 @@
+<div class="panel panel-primary clean">
+    <div class="panel-heading">
+        <h3 class="panel-title">{$ main_mls.record.id ? 'Update MLS' : 'New MLS' $} Credential</h3>
+        <a class="btn btn-sm pull-right margin_top_reverse_20" ng-click="main_mls.close_dialog()"><i class="fa fa-times"></i></a>
+    </div>
+    <div class="panel-body">
+        <div class="ibox-content dialog" ng-class="main_mls.page_loader.dialog ? 'sk-loading' : ''" ng-style="modal_style">
+            {% include "common/loader.html" %}
+            <form name="form" class="form">
+                <div class="row" ng-class="{ 'has-error' : form.user.$invalid && !form.user.$pristine }" ng-if="main_mls.user_type == 'admin'">
+                    <label class="required">Client</label>
+                    <ui-select ng-model="main_mls.record.user" required name="user" ng-change="main_mls.read_mlss()">
+                        <ui-select-match>{$$select.selected.fullname$}</ui-select-match>
+                        <ui-select-choices repeat="option in main_mls.clients | filter: $select.search">
+                            <div ng-bind-html="option.fullname | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <br />
+                <div class="row" ng-class="{ 'has-error' : form.company.$invalid && !form.company.$pristine }">
+                    <label class="required">Company Name</label>
+                    <input ng-model="main_mls.record.name" name="name" type="text" class="form-control input-sm" placeholder="Company Name" required>
+                </div>
+                <br />
+                <div class="row" ng-class="{ 'has-error' : form.username.$invalid && !form.username.$pristine }">
+                    <label class="required">Username</label>
+                    <input ng-model="main_mls.record.username" name="username" type="text" class="form-control input-sm" placeholder="Username" required>
+                </div>
+                <br />
+                <div class="row" ng-class="{ 'has-error' : form.password.$invalid && !form.password.$pristine }">
+                    <label class="required">Password</label>
+                    <input ng-model="main_mls.record.password" name="password" type="text" class="form-control" placeholder="Password" required>
+                </div>
+                <br />
+                <div class="row" ng-class="{ 'has-error' : form.url.$invalid && !form.url.$pristine }">
+                    <label class="required">URL</label>
+                    <input ng-model="main_mls.record.url" name="url" type="text" class="form-control input-sm" placeholder="URL" required>
+                </div>
+                <br />
+                <div class="row">
+                    <label class="required">Security Question and Answer</label>
+                    <textarea rows="5" ng-model="main_mls.record.remarks" name="remarks" class="form-control" placeholder="Security Question and Answer"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="">
+            <button class="btn btn-sm btn-success" ng-disabled="form.$invalid || main_mls.page_loader.dialog" ng-click="main_mls.create()">Save</button>
+        </div>
+    </div>
+</div>

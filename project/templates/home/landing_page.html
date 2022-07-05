@@ -1,0 +1,528 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>WeProBPO</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'landing_page/images/bpo/logo.png' %}" />
+    <!-- Bootstrap -->
+    <link href="{% static 'landing_page/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <!-- Template CSS Files  -->
+    <link href="{% static 'landing_page/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'landing_page/js/plugins/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'landing_page/js/plugins/owl-carousel/owl.theme.css' %}" rel="stylesheet">
+    <link href="{% static 'landing_page/js/plugins/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'landing_page/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'landing_page/css/responsive.css' %}" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{$ static ' images/fav-144.png' $}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{$ static ' images/fav-114.png' $}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{$ static ' images/fav-72.png' $}">
+    <link rel="apple-touch-icon-precomposed" href="{$ static ' images/fav-57.png' $}">
+    <link rel="shortcut icon" href="{$ static ' images/fav.png' $}">
+</head>
+
+<body>
+    <!-- Full Header Starts -->
+    <header class="header-full clearfix">
+        <!-- Top Bar Starts -->
+        <!-- <div class="top-bar">
+            <div class="container clearfix text-center-xs">
+                <ul class="list-unstyled list-inline pull-left-lg pull-left-md pull-left-sm animation">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                </ul>
+                <p class="pull-right-lg pull-right-md pull-right-sm text-right-lg text-right-md text-right-sm text-light">
+                    Welcome to Fin Advisor website, we have expertise in managing your finances!!!
+                </p>
+            </div>
+        </div> -->
+        <!-- Top Bar Ends -->
+        <!-- Nested Container Starts -->
+        <div class="container">
+            <!-- Main Menu Starts -->
+            <div>
+                <a href="index.html" class="navbar-brand">
+                    <img src="https://storage.googleapis.com/weprobpo3/sitelogo.png" alt="Fin Advisor" class="img-responsive logo">
+                </a>
+            </div>
+            <nav id="nav" class="main-menu navbar flat">
+                <!-- Nav Header Starts -->
+                <div class="navbar-header">
+                    <button type="button" class="btn btn-navbar navbar-toggle flat animation" data-toggle="collapse" data-target=".navbar-cat-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <!-- Nav Header Ends -->
+                <!-- Navbar Cat collapse Starts -->
+                <div class="collapse navbar-collapse navbar-cat-collapse animation">
+                    <!-- Nav Links Starts -->
+                    <ul class="nav navbar-nav navbar-right text-bold hayz" style="color:white !important;">
+                        <li class="active"><a href="#home">Home</a></li>
+                        <li class="active"><a href="#about">About Us</a></li>
+                        <li class="active"><a href="#strategy">Strategy</a></li>
+                        <li class="active"><a href="#services">Services</a></li>
+                        <li class="active"><a href="#contact_us">Contact Us</a></li>
+                        <li class="active"><a href="/login">Login</a></li>
+                    </ul>
+                    <!-- Nav Links Ends -->
+                </div>
+                <!-- Navbar Cat collapse Ends -->
+            </nav>
+            <!-- Main Menu Ends -->
+            <!-- Slider Starts -->
+            <div id="main-slider" class="carousel slide carousel-fade hidden-xs" data-ride="carousel">
+                <!-- Wrapper For Slides Starts -->
+                <div class="carousel-inner carousel-top text-center">
+                    <div class="item active">
+                        <div class="carousel-caption text-lite-color hidden-xs">
+                            <h4 class="text-light">Patriotism is often an arbitrary veneration of real estate above principles.</h4>
+                            <small class="pull-right">- George Jean Nathan</small>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-caption text-lite-color hidden-xs">
+                            <h4 class="text-light">Real estate is the key cost of physical retailers. That's why there's the old saw: location, location, location.</h4>
+                            <small class="pull-right">- Jeff Bezos</small>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-caption text-lite-color hidden-xs">
+                            <h4 class="text-light">In real estate, you make 10% of your money because you're a genius and 90% because you catch a great wave.</h4>
+                            <small class="pull-right">- Jeff Greene</small>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-caption text-lite-color hidden-xs">
+                            <h4 class="text-light">In the real estate business you learn more about people, and you learn more about community issues and you learn more about life.</h4>
+                            <small class="pull-right">- Johnny Isakson</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Wrapper For Slides Ends -->
+                <!-- Control Starts -->
+                <a class="left carousel-control animation" id="prev" href="#main-slider" role="button" data-slide="prev">
+                    <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control animation" id="next" href="#main-slider" role="button" data-slide="next">
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                <!-- Control Ends -->
+            </div>
+            <!-- Slider Ends -->
+        </div>
+        <!-- Nested Container Ends -->
+    </header>
+    <!-- Full Header Ends -->
+    <!-- About Section Starts -->
+    <!-- <section class="section-area" id="about"> -->
+    <section class="box-3 section-area" id="about">
+        <br><br><br>
+        <!-- Nested Container Starts -->
+        <div class="container text-center-xs">
+            <!-- Nested Row Starts -->
+            <div class="row">
+                <!-- Content Starts -->
+                <div class="col-md-6 col-xs-12">
+                    <h3 class="main-heading-1 text-spl-color text-normal text-uppercase">About</h3>
+                    <p class="text-grey-color">
+                        WePro BPO has been established as a Broker Price Opinion outsourcing company which caters all types of Residential and Commercial properties throughout United States.
+                    </p>
+                    <p class="text-grey-color">
+                        Our company started as a small business partnership in 2008.
+                        <br> With the perseverance, commitment and continuously delivering high quality reports of the people behind, the business started to grow and created a team of highly skilled real estate analyst who are best experienced in processing and formulating standard quality, error-free, quick turn around time and cost effective broker price opinions.
+                    </p>
+                </div>
+                <!-- Content Ends -->
+                <!-- Divider For Small Screen Starts -->
+                <div class="col-xs-12 hidden visible-sm visible-xs">
+                    <p>
+                        <br>
+                    </p>
+                </div>
+                <!-- Divider For Small Screen Ends -->
+                <!-- Carousel Starts -->
+                <div class="col-md-6 col-xs-12">
+                    <div id="carousel-1" class="carousel slide" data-ride="carousel">
+                        <!-- Wrap For Slides Starts -->
+                        <div class="carousel-inner carousel-left" role="listbox">
+                            <div class="item active">
+                                <img src="https://storage.googleapis.com/weprobpo3/about/Ordercapture.jpg" class="img-responsive img-center">
+                            </div>
+                            <div class="item">
+                                <img src="https://storage.googleapis.com/weprobpo3/about/createcredentials.jpg" class="img-responsive img-center">
+                            </div>
+                            <div class="item">
+                                <img src="https://storage.googleapis.com/weprobpo3/about/credintials.jpg" class="img-responsive img-center">
+                            </div>
+                            <div class="item">
+                                <img src="https://storage.googleapis.com/weprobpo3/about/Hold.jpg" class="img-responsive img-center">
+                            </div>
+                            <div class="item">
+                                <img src="https://storage.googleapis.com/weprobpo3/about/login.jpg" class="img-responsive img-center">
+                            </div>
+                            <div class="item">
+                                <img src="https://storage.googleapis.com/weprobpo3/about/MLS.jpg" class="img-responsive img-center">
+                            </div>
+                            
+                            <div class="item">
+                                <img src="https://storage.googleapis.com/weprobpo3/about/QC.jpg" class="img-responsive img-center">
+                            </div>
+                            <div class="item">
+                                <img src="https://storage.googleapis.com/weprobpo3/about/registration.jpg" class="img-responsive img-center">
+                            </div>
+                        </div>
+                        <!-- Wrap For Slides Ends -->
+                        <!-- Controls Starts -->
+                        <a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-1" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        <!-- Controls Ends -->
+                    </div>
+                </div>
+                <!-- Carousel Ends -->
+            </div>
+            <!-- Nested Row Ends -->
+        </div>
+        <!-- Nested Container Ends -->
+    </section>
+    <!-- About Section Ends -->
+    <!-- Divider Starts -->
+    <!-- <div class="container"><hr class="hr-style-1"></div> -->
+    <!-- Divider Ends -->
+    <!-- Service Section Starts -->
+    <section class="box-3 section-area" id="strategy">
+        <br><br>
+        <!-- Nested Container Starts -->
+        <div class="container text-center-xs">
+            <h4 class="main-heading-1 text-spl-color text-center">Company Strategy</h4>
+            <!-- Nested Row Starts -->
+            <div class="row strategy">
+                <!-- Box #1 Starts -->
+                <!-- Box #1 Ends -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="box-1 sub">
+                        <i class="fa fa-bullseye"></i>
+                        <h5 class="sub-heading-1 text-center">Mission</h5>
+                        <p class="text-grey-color">
+                            To build a long term relationship with our clients by providing high quality, accuracy and timeliness submission of reports. Also, enhancing the business with advanced technology making clients easier to communicate BPO reports.
+                        </p>
+                    </div>
+                </div>
+                <!-- Box #2 Starts -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="box-1 sub">
+                        <i class="fa fa-eye"></i>
+                        <h5 class="sub-heading-1 text-center">Purpose</h5>
+                        <p class="text-grey-color">
+                            To build a long term relationship with our clients by providing high quality, accuracy and timeliness submission of reports. Also, enhancing the business with advanced technology making clients easier to communicate BPO reports
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Box #2 Ends -->
+            <!-- Box #3 Starts -->
+            <div class="row strategy">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="box-1 sub">
+                        <i class="fa fa-star"></i>
+                        <h5 class="sub-heading-1 text-center">Vision</h5>
+                        <p class="text-grey-color">
+                            To provide high quality services that exceeds the expectations of our clients.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="box-1 sub">
+                        <i class="fa fa-smile-o"></i>
+                        <h5 class="sub-heading-1 text-center">Core Values</h5>
+                        <p class="text-grey-color">
+                            We treat our clients with respect and honesty in all aspects of work. Aside from our treatment to our clients, we also believe that employees are the most essential asset in a company. Thus, developing an honesty, respectful environment as well as valuing the effort of the employees making the company stronger and better.
+                        </p>
+                    </div>
+                </div>
+                <!-- Right Col Ends -->
+            </div>
+            <!--- Nested Row Ends -->
+        </div>
+        <!-- Nested Container Ends -->
+    </section>
+    <section class="box-3 section-area" id="services">
+        <!-- Nested Container Starts -->
+        <div class="container text-center-xs">
+            <h4 class="main-heading-1 text-spl-color text-center">Services</h4>
+            <!-- Nested Row Starts -->
+            <div class="row strategy">
+                <div class="col-sm-offset-1 col-md-11 col-sm-11 col-xs-11">
+                    <p class="text-grey-color">
+                    <b>Our duties include the following:</b>
+                    </p>
+                    <p>
+                        <ul>
+                            <li>Providing the County Public Record of a property</li>
+                            <li>Pulling Comparable using Multiple Listing System</li>
+                            <li>Data Entry on Valuation Form.</li>
+                            <li>Uploading Comparable Photos</li>
+                            <li>24/7 monitoring and support to client's issue</li>
+                            <li>
+                                Rush/Normal order processing
+                                <ul>
+                                    <li>Rush order - 6 hours' time frame</li>
+                                    <li>normal order - 24 hours' time frame</li>
+                                </ul>
+                            </li>
+                            <li>QC Issue responded within 6 hours' time frame</li>
+                        </ul>
+                    </p>
+
+                    <p class="text-grey-color">
+                    We are experienced in utilizing various MLS such as Tren, Flex, Fusion, Geodata, Stratus, Citrus, GSMLS, Ntries, Paragon, Matrix, Navica and effectively working with different valuation companies such as Bpofulfillment, Proteck, Emortgage, Clear Capital, SAM, AltiSource, Service link, Valuation Vision, AVM, PCVM, Realty Pilot, Equator, Cascade and etc...
+                    </p>
+                </div>
+            </div>
+
+            <div class="row strategy">
+                <!-- Box #1 Starts -->
+                <!-- Box #1 Ends -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <center>
+                        <div class="box-1 sub">
+                            <img src="{% static 'landing_page/images/bpo/tax_record.jpg' %}" width="300px" height="300px">
+                            <h5 class="sub-heading-1 text-center">Tax Report</h5>
+                            <p class="text-grey-color">
+                                All subject information is based on County record and/or tax record for verification of the subject's building characteristics. However, analysts make no warranty as to the correctness or accuracy of the information set forth. whether express or implied, in fact or in law, including without limitation the implied warranties of merchantability and fitness for a particular use.
+                            </p>
+                        </div>
+                    </center>
+                </div>
+                <!-- Box #2 Starts -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <center>
+                        <div class="box-1 sub">
+                            <img src="{% static 'landing_page/images/bpo/comp_search.jpg' %}" width="300px" height="300px">
+                            <h5 class="sub-heading-1 text-center">Comp Searches</h5>
+                            <p class="text-grey-color">
+                                Multiple Listing System is the main source of our data. By providing three sold listing and three active listings and Setting criteria for proximity, GLA, age, style and room count we identify the subject's current market value.
+                            </p>
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <!-- Box #2 Ends -->
+            <!-- Box #3 Starts -->
+            <div class="row strategy">
+                <!-- Box #1 Starts -->
+                <!-- Box #1 Ends -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <center>
+                        <div class="box-1 sub">
+                            <img src="{% static 'landing_page/images/bpo/data_entry.jpg' %}" width="300px" height="300px">
+                            <h5 class="sub-heading-1 text-center">Data Entry</h5>
+                            <p class="text-grey-color">
+                                All fields in the form are inputted, from subject property, neighborhood up to the comparable with unique value conclusion comment for each property. Adjustment also added to determine the best current value of the subject.
+                            </p>
+                        </div>
+                    </center>
+                </div>
+                <!-- Box #2 Starts -->
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <center>
+                        <div class="box-1 sub">
+                            <img src="{% static 'landing_page/images/bpo/attachment.jpg' %}" width="300px" height="300px">
+                            <h5 class="sub-heading-1 text-center">Attachment</h5>
+                            <p class="text-grey-color">
+                                All necessary source of information that has been used in the valuation analysis will be uploaded in the form such as subject property tax record and/or Original appraisal, Subject MLS sheet (if the subject property has a pending offer). Comparable MLS sheets also uploaded if needed in the valuation platform.
+                            </p>
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <!--- Nested Row Ends -->
+        </div>
+        <!-- Nested Container Ends -->
+    </section>
+    <!-- Contact US -->
+    <section class="box-3 section-area" id="contact_us">
+        <!-- Nested Container Starts -->
+        <div class="container text-center-xs">
+            <!-- Nested Row Starts -->
+            <div class="contact-form-wrap">
+            <!-- Contact Form Starts -->
+                <!-- Nested Row Starts -->
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <h3 class="main-heading-1 text-spl-color text-normal text-uppercase">Why Choose Us?</h3>
+                        <p class="text-grey-color">
+                            We use all possible resources to get you the most accurate, dependable and time bound Broker Price Opinion - include dedicated and reliable MLS and Valuation experts with unmatched knowledge and service that comes from being in business for over 9 years.
+                        </p>
+                    </div>
+                    <!-- Content Ends -->
+                    <!-- Divider For Small Screen Starts -->
+                    <div class="col-xs-12 hidden visible-sm visible-xs">
+                        <p>
+                            <br>
+                        </p>
+                    </div>
+
+
+                    <div class="col-md-6 col-xs-12">
+                        <h3 class="main-heading-1 text-spl-color text-normal text-uppercase">Contact Us</h3>
+                        <!-- First Name Filed Starts -->
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="firstname" class="sr-only">Name: </label>
+                                    <input type="text" class="form-control flat" name="firstname" id="firstname" required="required" placeholder="Your Name">
+                                </div>
+                            </div>
+                        <!-- First Name Filed Ends -->
+                        <!-- E-mail Filed Starts -->
+                            <div class="col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <label for="email" class="sr-only">Email ID: </label>
+                                    <input type="text" class="form-control flat" name="email" id="email" required="required" placeholder="Your E-mail">
+                                </div>
+                            </div>
+                        <!-- E-mail Filed Ends -->
+                        <!-- Message Filed Starts -->
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="message" class="sr-only">Message: </label>
+                                    <textarea class="form-control flat" rows="4" name="message" id="message" required="required" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                        <!-- Message Filed Ends -->
+                        <!-- Send Button Starts -->
+                            <div class="col-xs-12">
+                                <button onClick="alde()" class="btn btn-secondary btn-big animation">Send Message
+                                </button>
+                            </div>
+                        <!-- Send Button Ends -->
+                        </div>
+                    </div>
+
+
+                
+                <!-- Nested Row Ends -->
+            <!-- Contact Form Ends -->
+            </div>
+        </div>
+        <!-- Nested Container Ends -->
+    </section> 
+
+
+    <!-- Service Section Ends -->
+    <!-- Divider Starts -->
+    <div class="container">
+        <hr class="hr-style-1">
+    </div>
+    <!-- Copyright Starts -->
+    <footer class="copyright">
+        <!-- Nested Container Starts -->
+        <div class="container text-center text-lite-color">
+            <em class="text-light">WeProBPO &copy; 2017. All Rights Reserved.</em>
+        </div>
+        <!-- Nested Container Ends -->
+    </footer>
+    <!-- Copyright Ends -->
+    <!-- Template JS Files -->
+    <script src="{% static 'landing_page/js/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'landing_page/js/jquery-migrate-1.4.1.min.js' %}"></script>
+    <script src="{% static 'landing_page/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'landing_page/js/plugins/backstretch/jquery.backstretch.min.js' %}"></script>
+    <script src="{% static 'landing_page/js/plugins/shuffle/jquery.shuffle.modernizr.min.js' %}"></script>
+    <script src="{% static 'landing_page/js/plugins/owl-carousel/owl.carousel.js' %}"></script>
+    <script src="{% static 'landing_page/js/plugins/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'landing_page/js/custom.js' %}?ver=1"></script>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    var sending = false;
+    // using jQuery
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+
+
+    function alde(){
+        if(sending){return;}
+        var firstname = $("#firstname").val()
+        var email = $("#email").val()
+        var message = $("#message").val()
+        if(!email){
+            alert("Kindly enter your email");
+        }
+
+        if(!message){
+            alert("Kindly enter a message");
+        }
+
+        var data = {
+            "firstname": firstname,
+            "email": email,
+            "message": message,
+        }
+
+
+        sending = true;
+        $.post("/send_email/contact_us/",data,function(data,status){
+            $("#firstname").val("");
+            $("#email").val("");
+            $("#message").val("");
+            alert("Message successfully sent.");
+            sending = false;
+        })
+    }
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                var csrftoken = getCookie('csrftoken');
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+</script>

@@ -1,0 +1,70 @@
+<div class="panel panel-success clean noheight">
+    <div class="panel-heading">
+        <h3 class="panel-title">Advance Filter</h3>
+        <a class="btn btn-sm pull-right margin_top_reverse_20 white" ng-click="main.close_dialog()"><i class="fa fa-times"></i></a>            
+    </div>
+    <div class="panel-body">
+        <div class="ibox-content dialog" ng-class="main.page_loader.dialog ? 'sk-loading' : ''" ng-style="modal_style">
+            {% include "common/loader.html" %}
+            <div class="row" ng-if="main.user_type == 'admin'">
+                <label class="required">Client</label>
+                <ui-select ng-model="main.filters.client" required name="client" ng-change="main.read_credentials()">
+                    <ui-select-match>{$$select.selected.fullname$}</ui-select-match>
+                    <ui-select-choices repeat="option in main.clients | filter: $select.search">
+                        <div ng-bind-html="option.fullname | highlight: $select.search"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+
+            <div class="row" ng-if="main.user_type == 'admin'">
+                <label class="required">Processor</label>
+                <ui-select ng-model="main.filters.current_assignee" required name="current_assignee">
+                    <ui-select-match>{$$select.selected.fullname$}</ui-select-match>
+                    <ui-select-choices repeat="option in main.cdas | filter: $select.search">
+                        <div ng-bind-html="option.fullname | highlight: $select.search"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+
+
+            <div class="row">
+                <label class="required">Order Type</label>
+                <ui-select ng-model="main.filters.order_type" required name="client">
+                    <ui-select-match>{$$select.selected.name$}</ui-select-match>
+                    <ui-select-choices repeat="option in main.order_types | filter: $select.search">
+                        <div ng-bind-html="option.name | highlight: $select.search"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+
+            <div class="row">
+                
+            <div class="row col-sm-6">
+                <label>Date From</label>
+                <p class="input-group" ng-click="$event.stopPropagation()">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="main.open_date('date_from')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    <input type="text" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="main.filters.date_from" is-open="main.uibdates['date_from']"  />
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <label>Date To</label>
+                <p class="input-group"  ng-click="$event.stopPropagation()">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="main.open_date('date_to')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    <input type="text" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="main.filters.date_to" is-open="main.uibdates['date_to']"  />
+                </p>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="">
+            <button class="btn btn-sm btn-success btn-w-m" ng-disabled="main.page_loader.dialog" ng-click="main.main_loader()">Search</button>
+            <button class="btn btn-sm btn-default btn-w-m" ng-disabled="main.page_loader.dialog" ng-click="main.main_loader(True)">Reset Filter</button>
+        </div>
+    </div>
+</div>

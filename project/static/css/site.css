@@ -1,0 +1,794 @@
+.btn.white{
+    color:white;
+}
+
+.full_width{
+    width: 100%;
+}
+
+.tr_gray:hover {
+    background-color: #E8E8E8;
+}
+
+.tr_gray2 {
+    background-color: #f7f7f7;
+}
+
+.highlight {
+    background-color: #8ebee8;
+}
+
+.rushighlight {
+    background-color: #f77681;
+}
+
+.duplicate_address {
+    background-color: lightgreen;
+}
+
+.dialog_whole .modal-content{
+    height: 99% !important;
+}
+
+.dialog_whole .modal-dialog{
+    width: 98%;
+      height: 92%;
+      padding: 0;
+}
+
+/*.modal-dialog {
+    height: 90%;
+}*/
+
+.modal-footer {
+    background-color: white;
+}
+
+.second_dialog{
+    z-index: 9999 !important;
+}
+
+.third_dialog{
+    z-index: 99999 !important;
+}
+
+div.width80 div.modal-dialog{
+    width: 80% !important;
+}
+
+div.width40 div.modal-dialog{
+    width: 40% !important;
+}
+
+div.width50 div.modal-dialog{
+    width: 50% !important;
+}
+
+div.width60 div.modal-dialog{
+    width: 50% !important;
+} 
+
+
+.modal-dialog .modal-header {
+    height: 15%;
+}
+
+
+/*.modal-dialog  .modal-body{height:75%; overflow: auto;}*/
+
+.table_loading {
+    opacity: 0.3;
+}
+
+/*div.modal-content {
+    overflow-x: hidden;
+    overflow-y: auto;
+}*/
+
+.modalibox {
+    height: 95%;
+}
+
+.modalibox .ibox {
+    height: 95%;
+}
+
+.modalibox .ibox-title {
+    height: 5%;
+}
+
+.modalibox .ibox-content {
+    height: 90%;
+}
+
+.ibox_nofooter {
+    height: 100%;
+}
+
+.ibox_nofooter .ibox {
+    height: 95%;
+}
+
+.ibox_nofooter .ibox-content {
+    height: 95%;
+    overflow: auto;
+}
+
+.ibox_nofooter {
+    height: 100%;
+}
+
+.ibox_nofooter .ibox {
+    height: 95%;
+}
+
+.ibox_nofooter .ibox-content {
+    height: 95%;
+    overflow: auto;
+}
+
+.ibox.no-border .ibox-content {
+    border: none !important;
+    border-style: none;
+}
+
+tr.hdr_border_r th {
+    border-right-style: solid;
+    border-right-width: thin;
+}
+
+hr.divider {
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+    margin: 0px !important;
+}
+
+
+.hand_cursor {
+    cursor: pointer !important;
+}
+
+.hand_cursor.gray:hover {
+    background-color: #E8E8E8 !important;
+}
+
+label.required:after {
+    content: " *";
+    color: red;
+    vertical-align: super;
+    font-size: smaller;
+}
+
+label.required_before:before {
+    content: "* ";
+    color: red;
+    vertical-align: super;
+    font-size: smaller;
+}
+
+p.required:after {
+    content: " *";
+    color: red;
+    vertical-align: super;
+    font-size: smaller;
+}
+
+p.required_before:before {
+    content: "* ";
+    color: red;
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.red{
+    color: red;
+}
+
+.doubleUnderline {
+    text-decoration: underline;
+    border-bottom: 1px solid #000;
+}
+
+/*.smallSelect2 {
+    height: 50px !important;
+}*/
+
+
+/*PRINTinG PAGE*/
+
+page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+
+page[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+}
+
+page[size="A4"][layout="portrait"] {
+    width: 29.7cm;
+    height: 21cm;
+}
+
+page[size="A3"] {
+    width: 29.7cm;
+    height: 42cm;
+}
+
+page[size="A3"][layout="portrait"] {
+    width: 42cm;
+    height: 29.7cm;
+}
+
+page[size="A5"] {
+    width: 14.8cm;
+    height: 21cm;
+}
+
+page[size="A5"][layout="portrait"] {
+    width: 21cm;
+    height: 14.8cm;
+}
+
+@media print {
+    body,
+    page {
+        margin: 0;
+        box-shadow: 0;
+    }
+}
+
+
+/*BORDERS*/
+
+.border_1 {
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.margin_top_reverse_5 {
+    margin-top: -5px;
+}
+
+.margin_top_reverse_10 {
+    margin-top: -10px;
+}
+
+.margin_top_reverse_15 {
+    margin-top: -15px;
+}
+
+.margin_top_reverse_20 {
+    margin-top: -20px;
+}
+
+.margin_top_reverse_30 {
+    margin-top: -30px;
+}
+
+.margin_top_reverse_40 {
+    margin-top: -40px;
+}
+
+.margin_top_5 {
+    margin-top: 5px;
+}
+
+.margin_top_10 {
+    margin-top: 10px;
+}
+
+.margin_top_20 {
+    margin-top: 20px;
+}
+
+.margin_top_15 {
+    margin-top: 15px;
+}
+
+.margin_top_30 {
+    margin-top: 30px;
+}
+
+.margin_top_30 {
+    margin-top: 30px;
+}
+
+.margin_top_100 {
+    margin-top: 100px;
+}
+
+.margin_bottom_5 {
+    margin-bottom: 5px;
+}
+
+.margin_bottom_10 {
+    margin-bottom: 10px;
+}
+
+.margin_bottom_20 {
+    margin-bottom: 20px;
+}
+
+.margin_bottom_30 {
+    margin-bottom: 30px;
+}
+
+.margin_right_reverse_5 {
+    margin-right: -5px;
+}
+
+.margin_right_reverse_10 {
+    margin-right: -10px;
+}
+
+.margin_right_reverse_15 {
+    margin-right: -15px;
+}
+
+.margin_right_reverse_20 {
+    margin-right: -20px;
+}
+
+.margin_right_reverse_30 {
+    margin-right: -30px;
+}
+
+.margin_right_reverse_40 {
+    margin-right: -40px;
+}
+
+.margin_right_5 {
+    margin-right: 5px;
+}
+
+.margin_right_10 {
+    margin-right: 10px;
+}
+
+.margin_right_15 {
+    margin-right: 15px;
+}
+
+.margin_right_20 {
+    margin-right: 20px;
+}
+
+.margin_right_30 {
+    margin-right: 30px;
+}
+
+.margin_right_40 {
+    margin-right: 40px;
+}
+
+.margin_left_5 {
+    margin-left: 5px;
+}
+
+.margin_left_10 {
+    margin-left: 10px;
+}
+
+.margin_left_15 {
+    margin-left: 15px;
+}
+
+.margin_left_20 {
+    margin-left: 20px;
+}
+
+.margin_left_30 {
+    margin-left: 30px;
+}
+
+.margin_left_40 {
+    margin-left: 40px;
+}
+
+
+
+/*Navbar Menu*/
+
+.dropdown-large {
+    position: static !important;
+}
+
+.dropdown-large ul {
+    width: 75%;
+}
+
+ul.dropdown-menu-large > li > ul {
+    width: 100%;
+}
+
+.dropdown-menu-large {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 20px 0px;
+    border-top-style: solid;
+    border-radius: 10px;
+}
+
+.dropdown-menu-large > li > ul {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu-large > li > ul > li {
+    list-style: none;
+}
+
+.dropdown-menu-large > li > ul > li > a {
+    display: block;
+    /*padding: 3px 20px;*/
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    color: #333333;
+    white-space: normal;
+    font-size: 13px !important;
+}
+
+.dropdown-menu-large > li ul > li > a:hover,
+.dropdown-menu-large > li ul > li > a:focus {
+    text-decoration: none;
+    color: #262626;
+    background-color: #f5f5f5;
+}
+
+.dropdown-menu-large .disabled > a,
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus {
+    color: #999999;
+}
+
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+    background-image: none;
+    filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
+    cursor: not-allowed;
+}
+
+.dropdown-menu-large .dropdown-header {
+    color: #428bca;
+    font-size: 18px;
+}
+
+
+/*End of Navbar Menu*/
+
+.overflowy {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ui-select-container {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+    display: table;
+    table-layout: fixed;
+}
+
+.input-group .ui-select-container {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+    display: table;
+    table-layout: fixed;
+}
+
+.file_button {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+    background-color: transparent;
+    color: transparent;
+}
+
+.content-left {
+    height: 100%; 
+    border-right: 1px inset;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.content-right{
+    height: 100%; 
+    border-left: 1px inset;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.modal-price-content{
+    margin: auto;
+    margin-top: 5%;
+    width: 60%;
+    border-left: 1px solid #e7eaec;
+    border-right: 2px solid #e7eaec;
+    border-bottom: 1px solid #e7eaec;
+}
+
+.inventory-wrapper{
+    height: 95% !important;
+}
+
+.inventory-box{
+    height: inherit !important;
+}
+
+.grid-list{
+    list-style: none !important;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
+hr.bold {
+  border: 2 !important;
+  border-top: 5px solid @hr-border !important;
+}
+
+div.divider{
+    border: 2 !important;
+    border-top: 2px solid;   
+}
+
+.right { text-align: right; }
+
+.wrapper-content{
+    padding:0px !important;
+}
+
+.wrapper{
+    padding:0px !important;
+}
+
+p.no_margin{
+    margin: 0px;
+}
+
+button.no_radius{
+    border-radius: 0px;
+}
+div.panel.clean{
+    border:0px;
+    margin-bottom: 0px;
+}
+div.panel.clean div.panel-footer{
+    background-color: transparent;
+}
+
+div.panel.clean div.panel-body{
+    overflow-y: auto;
+    height: 600px;
+    width: 100%
+}
+
+div.panel.noheight div.panel-body{
+    overflow-y: visible;
+    height: inherit;
+}
+
+a.white{
+    color: white;
+}
+
+.dialog_width_70 .modal-dialog,
+.inmodal {
+    width: 70% !important;
+}
+
+
+.dialog_whole .modal-content{
+    height: 99% !important;
+}
+
+.dialog_whole .modal-dialog{
+    width: 98%;
+      height: 92%;
+      padding: 0;
+}
+
+div.width40 div.modal-dialog{
+    width: 40% !important;
+}
+
+div.width50 div.modal-dialog{
+    width: 50% !important;
+}
+
+div.width60 div.modal-dialog{
+    width: 60% !important;
+} 
+
+div.width70 div.modal-dialog{
+    width: 70% !important;
+}
+
+div.width80 div.modal-dialog{
+    width: 80% !important;
+}
+
+.dialog_height_20 .modal-content,
+.inmodal {
+    height: 20% !important;
+}
+
+.dialog_height_40 .modal-content,
+.inmodal {
+    height: 40% !important;
+}
+
+.dialog_height_45 .modal-content,
+.inmodal {
+    height: 45% !important;
+}
+
+.dialog_height_50 .modal-content,
+.inmodal {
+    height: 50% !important;
+}
+
+.dialog_height_55 .modal-content,
+.inmodal {
+    height: 55% !important;
+}
+
+.dialog_height_60 .modal-content,
+.inmodal {
+    height: 60% !important;
+}
+
+.dialog_height_70 .modal-content,
+.inmodal {
+    height: 70% !important;
+}
+
+.dialog_height_80 .modal-content,
+.inmodal {
+    height: 80% !important;
+}
+
+.dialog_height_90 .modal-content,
+.inmodal {
+    height: 90% !important;
+}
+
+.dialog_height_100 .modal-content,
+.inmodal {
+    height: 100% !important;
+}
+
+.dialog_width_20 .modal-dialog,
+.inmodal {
+    width: 20% !important;
+}
+
+.dialog_width_40 .modal-dialog,
+.inmodal {
+    width: 40% !important;
+}
+
+.dialog_width_45 .modal-dialog,
+.inmodal {
+    width: 45% !important;
+}
+
+.dialog_width_50 .modal-dialog,
+.inmodal {
+    width: 50% !important;
+}
+
+.dialog_width_55 .modal-dialog,
+.inmodal {
+    width: 55% !important;
+}
+
+.dialog_width_60 .modal-dialog,
+.inmodal {
+    width: 60% !important;
+}
+
+.dialog_width_70 .modal-dialog,
+.inmodal {
+    width: 70% !important;
+}
+
+.dialog_width_80 .modal-dialog,
+.inmodal {
+    width: 80% !important;
+}
+
+.dialog_width_90 .modal-dialog,
+.inmodal {
+    width: 90% !important;
+}
+
+.dialog_width_100 .modal-dialog,
+.inmodal {
+    width: 100% !important;
+}
+
+.popover {
+    max-width: none !important;
+}
+
+div.transaction-content-body .nav-tabs > li > a {
+    color: #A7B1C2;
+    font-weight: 600;
+    padding: 10px 70px 10px 70px;
+}
+
+
+/*div.transaction-content-header{
+            background-color: #f3f3f4;
+        }*/
+
+div.header_controls .nav>li>a {
+    display: initial !important;
+}
+
+div.fixed-nav .dialog_body {
+    margin-top: 65px !important;
+}
+
+div.wholedialog div.footer.fixed {
+    margin-left: 0px;
+    background-color: #222;
+}
+
+div.wholedialog .table>tbody>tr>td{
+    padding: 3px !important;
+    border-top: 0px !important;
+}
+
+div.wholedialog div.overflowy{
+    overflow-y: initial !important;
+    overflow-x: initial !important;
+}
+
+.modal-fullscreen div.modal-content{
+    overflow: auto !important;
+}
+
+.right { text-align: right; }
+
+
+div.dialog_body > .sk-spinner { display: none; }
+div.dialog_body.sk-loading { position: relative;}
+div.dialog_body.sk-loading:after {
+    content: '';
+    background-color: rgba(255,255,255,0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+div.dialog_body.sk-loading > .sk-spinner {
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+}

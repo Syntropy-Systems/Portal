@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Set Schedule</h3>
+        <a class="btn btn-sm pull-right margin_top_reverse_20" ng-click="main.close_dialog()"><i class="fa fa-times"></i></a>
+    </div>
+    <div class="panel-body">
+        <div class="ibox-content dialog" ng-class="main.page_loader.dialog ? 'sk-loading' : ''" ng-style="modal_style">
+            {% include "common/loader.html" %}
+            <div class="row">
+
+                <div class="row">
+                    <label class="required">Date</label>
+                    <p class="input-group" ng-click="$event.stopPropagation()">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="main.open_date('date_from')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                        <input type="text" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="main.record.date_from" is-open="main.uibdates['date_from']"  />
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row" ng-class="{ 'has-error' : form.description.$invalid && !form.description.$pristine }">
+                    <label class="required">Description</label>
+                    <textarea rows="2" ng-model="main.record.description" name="description" class="form-control" placeholder="House #, Street name, City, State, Zip"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel-footer">
+        <div class="pull-right">
+            <button class="btn btn-sm btn-success btn-w-m" ng-disabled="form.$invalid || main.page_loader.dialog" ng-click="main.create_schedule()">Save</button>
+        </div>
+    </div>
+</div>
