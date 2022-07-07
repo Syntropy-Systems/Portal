@@ -9,6 +9,5 @@ class Users_create_form(forms.ModelForm):
 			'email',
 			'fullname',
 			'address',
-			'contact_no',
 			'password',
 		)

@@ -26,22 +26,9 @@ def registration_dialog(request):
 def register(request):
 	try: 
 		params = post_data(request)
-		user_type = params.get("user_type","client")
-
-		user_type = User_type.objects.get(code__iexact= user_type)
-		params["user_type"] = user_type.pk
-
-		if "is_bpo" in params or "is_va" in params:
-			if not params.get("is_bpo",False) and not params.get("is_va",False):
-				raise_error("You need to select atleast one service type.")
-
-		if not params.get("is_bpo",False) and not params.get("is_va",False):
-			params["is_bpo"] = True
 
 		try:
 			instance = User.objects.get(id = params.get("id",None))
-			params["is_va"] = instance.is_va
-			params["is_bpo"] = instance.is_bpo
 			user_form = Users_edit_form(params,instance = instance)
 			editing = True
 		except Exception as e:
@@ -55,7 +42,6 @@ def register(request):
 				user_save.is_active = True
 				user_save.save()
 
-			print("%s - %s"%(user_save.is_bpo,user_save.is_va))
 			return success()
 		else:
 			raise_error(user_form.errors,True)

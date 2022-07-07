@@ -37,7 +37,6 @@ class User(AbstractBaseUser):
 	email = models.EmailField(max_length = 254, null = False, blank = False, unique = True)
 	fullname = models.CharField(max_length = 50, null = False, blank = False)
 	address = models.TextField(null = True,blank = True)
-	contact_no = models.CharField(max_length = 250,null = True,blank = True)
 
 	is_active = models.BooleanField(default = True)
 	created_on = models.DateTimeField(auto_now_add = True)
