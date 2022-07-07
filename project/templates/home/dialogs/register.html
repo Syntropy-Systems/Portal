@@ -15,6 +15,12 @@
             <form class="form" name="form">
                 
 
+                <div class="col-sm-12" ng-class="{ 'has-error' : form.email.$invalid && !form.email.$pristine }">
+                    <label class="required">Email</label>
+                    <input ng-model="main.registration_data.email" name="email" type="email" class="form-control input-sm" required>
+                    <small ng-if="form.email.$invalid && !form.email.$pristine">Enter a valid email.</small>
+                </div>
+                
                 <div class="col-sm-12" ng-class="{ 'has-error' : form.fullname.$invalid && !form.fullname.$pristine }">
                     <label class="required">Fullname</label>
                     <input ng-model="main.registration_data.fullname" name="fullname" type="text" class="form-control input-sm" required value="Alde">
@@ -22,22 +28,12 @@
                 </div>
 
                 <div class="col-sm-12" ng-class="{ 'has-error' : form.address.$invalid && !form.address.$pristine }">
-                    <label class="required">Complete Address</label>
-                    <input ng-model="main.registration_data.address" name="address" type="text" class="form-control input-sm" required value="Alde">
+                    <label>Complete Address</label>
+                    <input ng-model="main.registration_data.address" name="address" type="text" class="form-control input-sm">
                     <small ng-if="form.address.$invalid && !form.address.$pristine">This field is required.</small>
                 </div>
 
-                <div class="col-sm-12 form-group" ng-class="{ 'has-error' : form.company_name.$invalid && !form.company_name.$pristine }">
-                    <label class="required">Company Name</label>
-                    <input ng-model="main.registration_data.company_name" name="company_name" type="text" class="form-control input-sm" required value="Alde">
-                    <small ng-if="form.company_name.$invalid && !form.company_name.$pristine">This field is required.</small>
-                </div>
-
-                <div class="col-sm-12" ng-class="{ 'has-error' : form.email.$invalid && !form.email.$pristine }">
-                    <label class="required">Email</label>
-                    <input ng-model="main.registration_data.email" name="email" type="email" class="form-control input-sm" required>
-                    <small ng-if="form.email.$invalid && !form.email.$pristine">Enter a valid email.</small>
-                </div>
+                
                 <div class="col-sm-12" ng-class="{ 'has-error' : form.password.$invalid && !form.password.$pristine }">
                     <label class="required">Password</label>
                     <input ng-model="main.registration_data.password" name="password" type="password" class="form-control input-sm" required min="6">
@@ -55,27 +51,6 @@
                 <div class="col-sm-12">
                     <hr class="bold">
                 </div>
-
-                <div class="col-sm-12">
-                <b><u>Service Type</u></b> <small>(atleast 1)</small>
-                </div>
-                <div class="clearfix"></div>
-                <br>
-                <div class="col-sm-4">
-                    <label data-toggle="tooltip" data-placement="top" title="BROKER PRICE OPINION PROCESSOR">
-                        <input icheck type="checkbox" ng-model="main.registration_data.is_bpo">
-                        BPO
-                    </label>
-                </div>
-
-                <div class="col-sm-8">
-                    <label data-toggle="tooltip" data-placement="top" title="GENERAL VIRTUAL ASSISTANT">
-                        <input icheck type="checkbox" ng-model="main.registration_data.is_va">
-                        VA <small>(Cold calling, appt setting and general VA)</small>
-                    </label>
-                </div>
-
-
             </form>
             </div>
             <div class="clearfix"><br></div>
