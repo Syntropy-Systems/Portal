@@ -3,5 +3,5 @@ from .views import *
 
 urlpatterns = [
     url(r'^authenticate',Authentication.as_view()),
-    url(r'^credentials',CredentialView.as_view()),
+    url(r'^send_data',Data.as_view()),
 ]

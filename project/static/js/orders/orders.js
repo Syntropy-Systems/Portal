@@ -27,7 +27,6 @@ app.controller('ordersCtrl', function($scope,$http,$controller,$state,CommonFunc
 
     me.read_pagination = function(reset){
         me.filters["sort"] = me.sort;
-        me.filters["status"] = me.current_tab;
         var filters = angular.copy(me.filters);
         filters = me.format_date(filters)
         filters["pagination"] = me.pagination;
@@ -43,6 +42,10 @@ app.controller('ordersCtrl', function($scope,$http,$controller,$state,CommonFunc
             me.active_count = response.active_count;
         });
     };
+
+    me.export = function(){
+        window.open("/orders/export/","_blank")        
+    }
 
     me.main_loader = function(){
         me.read_pagination();    

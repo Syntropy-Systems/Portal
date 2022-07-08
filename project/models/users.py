@@ -70,7 +70,6 @@ class User(AbstractBaseUser):
 			"email": self.email,
 			"fullname": self.fullname,
 			"address": self.address,
-			"contact_no": self.contact_no,
 			"is_active": self.is_active,
 		}
 

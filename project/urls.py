@@ -35,6 +35,7 @@ urlpatterns = [
 	#Orders
 	url(r'^orders/$', orders.orders),
 	url(r'^orders/read_pagination/$', orders.read_pagination),
+	url(r'^orders/export/$', orders.export),
 	
 	#Settings
 	url(r'^users/$', users.home),

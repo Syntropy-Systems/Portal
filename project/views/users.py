@@ -53,8 +53,10 @@ def read_pagination(request,from_export = False,filters = {}):
 		
 		sort_by = generate_sorting(filters.pop("sort",None))
 
-		filters["deleted"] = False
 		filters["is_active"] = filters.pop("is_active",True)
+
+		filters.pop("user_type",None)
+
 		filters = clean_obj(filters)
 
 		name_search = filters.pop("name","")
@@ -78,6 +80,7 @@ def read_pagination(request,from_export = False,filters = {}):
 			return results
 		return success_list(results,False)
 	except Exception as e:
+		print(e)
 		return error(e)
 
 def delete(request,pid):

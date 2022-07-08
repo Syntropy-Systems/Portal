@@ -5,6 +5,10 @@ from project.models.common import *
 class Order(models.Model):
 	client = models.ForeignKey("User",related_name = "Own_by")
 	date = models.DateField(null = True)
+
+	available_capacity = models.IntegerField(null = True,blank = True)
+	capacity = models.IntegerField(null = True,blank = True)
+
 	is_deleted = models.BooleanField(default = False)
 
 	class Meta:
@@ -14,27 +18,37 @@ class Order(models.Model):
 	def __str__(self):
 		return self.client
 
-	def delete(self,hard_delete = False):
-		if hard_delete:
-			super(Order, self).delete()
-		else:
-			self.is_deleted = True
-			self.save()
-
-	def save(self):
-		super(Order, self).save()
-
 	def as_dict(self,display = False,billing = False):
-		row = model_to_dict(self,fields = [
-			"id",
-			"date",
-		])
-
-		if display:
-			row["client"] = self.client.get_full_name()
-		else:
-			row["client"] = self.client.as_dict()
-
-		row["date"] = self.date.date()
+		row = model_to_dict(self)
+		row["client"] = self.client.as_dict()
 		return row
 
+	def get_top_sites(self):
+		instances = TopSite.objects.filter(order = self.pk)
+		rows = []
+
+		for instance in instances:
+			rows.append(instance.as_dict())
+
+		return rows
+
+
+class TopSite(models.Model):
+	order = models.ForeignKey("Order")
+	title = models.TextField()
+	url = models.TextField()
+
+	class Meta:
+		app_label = "project"
+		db_table  = "top_sites"
+
+	def __str__(self):
+		return self.client
+
+	def as_dict(self):
+		row = model_to_dict(self,fields = [
+			"title",
+			"url"
+		])
+
+		return row

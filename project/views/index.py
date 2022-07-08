@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, hashers, logout as logoutt, login 
 from django.contrib.auth.tokens import default_token_generator 
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode 
 
-
+from rest_framework.authtoken.models import Token
 
 def landingpage(request):
 	if not request.user.id:
@@ -61,11 +61,20 @@ def login(request):
 
 			user = authenticate(username = username, password = password)
 
+
 			if user:
 				if not user.is_active:
 					raise ValueError("This user is inactive. Kindly contact your admin at weprobpo@gmail.com")
 				loginn(request, user)
-				return success("Successfully logged in. Redirecting...")
+
+				token, created = Token.objects.get_or_create(user=user)
+
+
+				response = HttpResponse('Successfully logged in. Redirecting...')
+				response.set_cookie('token', token)
+				
+				return response
+				# return success("")
 			else:
 				raise_error("Invalid username/password.")
 		except Exception as e:

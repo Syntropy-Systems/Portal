@@ -160,7 +160,7 @@ else:
     # MIDDLEWARE_CLASSES += ('debug_panel.middleware.DebugPanelMiddleware',)
     INTERNAL_IPS = ('localhost','127.0.0.1','127.0.0.1:8000','127.0.0.1:9000')
     DEBUG = True
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ["*"]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
