@@ -35,8 +35,23 @@ class User_Manager(BaseUserManager):
 
 class User(AbstractBaseUser):
 	email = models.EmailField(max_length = 254, null = False, blank = False, unique = True)
+
+	firstname = models.TextField()
+	lastname = models.TextField()
 	fullname = models.CharField(max_length = 50, null = False, blank = False)
+
 	address = models.TextField(null = True,blank = True)
+
+	gender = models.CharField(max_length = 50, null = False, blank = False)
+	other_gender = models.CharField(max_length = 50, null = True, blank = True)
+
+
+	birthdate = models.DateField()
+
+	ethnicity_race = models.CharField(max_length = 50)
+	ethnicity_hispanic_origin = models.BooleanField(default=False)
+
+	occupation = models.CharField(max_length = 50, null = False, blank = False)
 
 	is_active = models.BooleanField(default = True)
 	created_on = models.DateTimeField(auto_now_add = True)

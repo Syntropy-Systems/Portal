@@ -21,10 +21,16 @@
                     <small ng-if="form.email.$invalid && !form.email.$pristine">Enter a valid email.</small>
                 </div>
                 
-                <div class="col-sm-12" ng-class="{ 'has-error' : form.fullname.$invalid && !form.fullname.$pristine }">
-                    <label class="required">Fullname</label>
-                    <input ng-model="main.registration_data.fullname" name="fullname" type="text" class="form-control input-sm" required value="Alde">
-                    <small ng-if="form.fullname.$invalid && !form.fullname.$pristine">This field is required.</small>
+                <div class="col-sm-12" ng-class="{ 'has-error' : form.firstname.$invalid && !form.firstname.$pristine }">
+                    <label class="required">Firstname</label>
+                    <input ng-model="main.registration_data.firstname" name="firstname" type="text" class="form-control input-sm" required>
+                    <small ng-if="form.firstname.$invalid && !form.firstname.$pristine">This field is required.</small>
+                </div>
+
+                <div class="col-sm-12" ng-class="{ 'has-error' : form.lastname.$invalid && !form.lastname.$pristine }">
+                    <label class="required">Lastname</label>
+                    <input ng-model="main.registration_data.lastname" name="lastname" type="text" class="form-control input-sm" required>
+                    <small ng-if="form.lastname.$invalid && !form.lastname.$pristine">This field is required.</small>
                 </div>
 
                 <div class="col-sm-12" ng-class="{ 'has-error' : form.address.$invalid && !form.address.$pristine }">
@@ -33,6 +39,121 @@
                     <small ng-if="form.address.$invalid && !form.address.$pristine">This field is required.</small>
                 </div>
 
+                <!-- GENDER -->
+
+                <div class="col-sm-6" ng-class="{ 'has-error' : form.gender.$invalid && !form.gender.$pristine }">
+                    <label>Gender</label>
+                    <div class="form-check">
+                      <input type="radio" ng-model="main.registration_data.gender" class="form-check-input" id="male" name="gender" value="male" checked>
+                      <label class="form-check-label" for="male">Male</label>
+
+                      &nbsp;&nbsp;
+                      <input type="radio" ng-model="main.registration_data.gender" class="form-check-input" id="female" name="gender" value="female">
+                      <label class="form-check-label" for="female">Female</label>
+
+                      &nbsp;&nbsp;
+                      <input type="radio" ng-model="main.registration_data.gender" class="form-check-input" id="other" name="gender" value="other">
+                      <label class="form-check-label" for="other">Other</label>
+                    </div>
+                </div>
+
+                <div class="col-sm-6" ng-if="main.registration_data.gender == 'other'">
+                    <label>&nbsp;</label>
+                    <input ng-model="main.registration_data.other_gender" name="other_gender" type="text" class="form-control input-sm" placeholder="Gender - Other">
+                </div>
+
+
+                <div class="clearfix"></div>
+                <br>
+
+                <!-- ETHNICITY -->
+                <div class="col-sm-12" ng-class="{ 'has-error' : form.ethnicity_race.$invalid && !form.ethnicity_race.$pristine }">
+                    <label>What is your race?</label>
+                    <div class="form-check">
+                      <input type="radio" ng-model="main.registration_data.ethnicity_race" class="form-check-input" id="white" name="ethnicity_race" value="white" checked>
+                      <label class="form-check-label" for="white">White</label>
+                    </div>
+
+                    <div class="form-check">
+                      <input type="radio" ng-model="main.registration_data.ethnicity_race" class="form-check-input" id="black" name="ethnicity_race" value="black" checked>
+                      <label class="form-check-label" for="black">Black or African American</label>
+                    </div>
+
+                    <div class="form-check">
+                      <input type="radio" ng-model="main.registration_data.ethnicity_race" class="form-check-input" id="american_indian" name="ethnicity_race" value="american_indian" checked>
+                      <label class="form-check-label" for="american_indian">American Indian or Alaska Native</label>
+                    </div>
+
+                    <div class="form-check">
+                      <input type="radio" ng-model="main.registration_data.ethnicity_race" class="form-check-input" id="asian" name="ethnicity_race" value="asian" checked>
+                      <label class="form-check-label" for="asian">Asian</label>
+                    </div>
+
+                    <div class="form-check">
+                      <input type="radio" ng-model="main.registration_data.ethnicity_race" class="form-check-input" id="hawaiian" name="ethnicity_race" value="hawaiian" checked>
+                      <label class="form-check-label" for="hawaiian">Native Hawaiian or Other Pacific Islander</label>
+                    </div>
+                </div>
+
+
+                <div class="clearfix"></div>
+                <br>
+
+
+                <!-- Hispanic Origin -->
+                <div class="col-sm-6" ng-class="{ 'has-error' : form.ethnicity_hispanic_origin.$invalid && !form.ethnicity_hispanic_origin.$pristine }">
+                    <label>Are you of Hispanic origin?</label>
+                    <div class="form-check">
+                      <input type="radio" ng-model="main.registration_data.ethnicity_hispanic_origin" class="form-check-input" id="yes" name="ethnicity_hispanic_origin" value="true" checked>
+                      <label class="form-check-label" for="yes">Yes</label>
+
+                      &nbsp;&nbsp;
+                      <input type="radio" ng-model="main.registration_data.ethnicity_hispanic_origin" class="form-check-input" id="no" name="ethnicity_hispanic_origin" value="false">
+                      <label class="form-check-label" for="no">No</label>
+                    </div>
+                </div>
+
+
+                <div class="clearfix"></div>
+                <br>
+
+
+                <!-- Occupation -->
+                <div class="col-sm-6" ng-class="{ 'has-error' : form.occupation.$invalid && !form.occupation.$pristine }">
+                    <label>Occupation</label>
+                    <div class="form-check">
+                      <input type="radio" ng-model="main.registration_data.occupation" class="form-check-input" id="remote" name="occupation" value="remote" checked>
+                      <label class="form-check-label" for="remote">Remote</label>
+
+                      &nbsp;&nbsp;
+                      <input type="radio" ng-model="main.registration_data.occupation" class="form-check-input" id="in_person" name="occupation" value="in_person">
+                      <label class="form-check-label" for="in_person">In Person</label>
+
+                      &nbsp;&nbsp;
+                      <input type="radio" ng-model="main.registration_data.occupation" class="form-check-input" id="hybrid" name="occupation" value="hybrid">
+                      <label class="form-check-label" for="hybrid">Hybrid</label>
+                    </div>
+                </div>
+
+
+                <div class="clearfix"></div>
+                <br>
+                
+
+                <div class="col-sm-12 form-group">
+                    <label class="required">Birthdate</label>
+                    <div>
+                        <p class="input-group">
+                            <span class="input-group-btn">
+                              <button type="button" class="btn btn-default" ng-click="main.open_date()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                            <input type="text" class="form-control"  mydatepicker uib-datepicker-popup="MM/dd/yyyy" ng-model="main.registration_data.birthdate" is-open="main.uibdates['date']"/>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <br><br>
                 
                 <div class="col-sm-12" ng-class="{ 'has-error' : form.password.$invalid && !form.password.$pristine }">
                     <label class="required">Password</label>

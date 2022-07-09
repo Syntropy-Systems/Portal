@@ -26,6 +26,7 @@ def registration_dialog(request):
 def register(request):
 	try: 
 		params = post_data(request)
+		params["fullname"] = "%s %s"%(params["firstname"],params["lastname"])
 
 		try:
 			instance = User.objects.get(id = params.get("id",None))
@@ -47,6 +48,7 @@ def register(request):
 			raise_error(user_form.errors,True)
 
 	except Exception as err:
+		print(err)
 		return error(err)
 
 @require_POST

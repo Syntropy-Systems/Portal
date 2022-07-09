@@ -7,7 +7,15 @@ class Users_create_form(forms.ModelForm):
 		model = User
 		fields = (
 			'email',
+			'firstname',
+			'lastname',
 			'fullname',
 			'address',
+			'gender',
+			'other_gender',
+			'birthdate',
+			'ethnicity_race',
+			'ethnicity_hispanic_origin',
+			'occupation',
 			'password',
 		)
