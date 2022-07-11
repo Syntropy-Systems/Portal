@@ -29,7 +29,7 @@ app.controller('loginCtrl', function($scope,$http,$controller,CommonFunc,CommonR
 		me.registration_data["repassword"] = "123123"
 
 
-		me.open_dialog("/register/create_dialog/","dialog_height_60 dialog_width_30");
+		me.open_dialog("/register/create_dialog/","dialog_height_60 dialog_width_40");
 	}
 
 	me.register = function(){

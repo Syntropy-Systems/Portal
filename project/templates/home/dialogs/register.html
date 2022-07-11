@@ -21,23 +21,48 @@
                     <small ng-if="form.email.$invalid && !form.email.$pristine">Enter a valid email.</small>
                 </div>
                 
-                <div class="col-sm-12" ng-class="{ 'has-error' : form.firstname.$invalid && !form.firstname.$pristine }">
-                    <label class="required">Firstname</label>
+                <div class="col-sm-6" ng-class="{ 'has-error' : form.firstname.$invalid && !form.firstname.$pristine }">
+                    <label class="required">First name</label>
                     <input ng-model="main.registration_data.firstname" name="firstname" type="text" class="form-control input-sm" required>
                     <small ng-if="form.firstname.$invalid && !form.firstname.$pristine">This field is required.</small>
                 </div>
 
-                <div class="col-sm-12" ng-class="{ 'has-error' : form.lastname.$invalid && !form.lastname.$pristine }">
-                    <label class="required">Lastname</label>
+                <div class="col-sm-6" ng-class="{ 'has-error' : form.lastname.$invalid && !form.lastname.$pristine }">
+                    <label class="required">Last name</label>
                     <input ng-model="main.registration_data.lastname" name="lastname" type="text" class="form-control input-sm" required>
                     <small ng-if="form.lastname.$invalid && !form.lastname.$pristine">This field is required.</small>
                 </div>
 
-                <div class="col-sm-12" ng-class="{ 'has-error' : form.address.$invalid && !form.address.$pristine }">
-                    <label>Complete Address</label>
-                    <input ng-model="main.registration_data.address" name="address" type="text" class="form-control input-sm">
-                    <small ng-if="form.address.$invalid && !form.address.$pristine">This field is required.</small>
+                <div class="clearfix"></div>
+                <br>
+
+                <div class="col-sm-6" ng-class="{ 'has-error' : form.address.$invalid && !form.address.$pristine }">
+                    <label>Address</label>
+                    <textarea ng-model="main.registration_data.address" name="address" type="text" class="form-control input-sm" rows="3" placeholder="Address">
+                    </textarea>
                 </div>
+
+                <div class="clearfix"></div>
+                <br>
+
+                <div class="col-sm-4" ng-class="{ 'has-error' : form.country.$invalid && !form.country.$pristine }">
+                    <label>Country</label>
+                    <input ng-model="main.registration_data.country" name="country" type="text" class="form-control input-sm" placeholder="Country">
+                </div>
+
+                <div class="col-sm-4" ng-class="{ 'has-error' : form.city.$invalid && !form.city.$pristine }">
+                    <label>City</label>
+                    <input ng-model="main.registration_data.city" name="city" type="text" class="form-control input-sm" placeholder="City">
+                </div>
+
+                <div class="col-sm-4" ng-class="{ 'has-error' : form.zip_code.$invalid && !form.zip_code.$pristine }">
+                    <label>Zip Code</label>
+                    <input ng-model="main.registration_data.zip_code" name="zip_code" type="text" class="form-control input-sm" placeholder="Zip Code">
+                </div>
+
+
+                <div class="clearfix"></div>
+                <br>
 
                 <!-- GENDER -->
 
@@ -57,6 +82,8 @@
                     </div>
                 </div>
 
+                <div class="clearfix"></div>
+
                 <div class="col-sm-6" ng-if="main.registration_data.gender == 'other'">
                     <label>&nbsp;</label>
                     <input ng-model="main.registration_data.other_gender" name="other_gender" type="text" class="form-control input-sm" placeholder="Gender - Other">
@@ -67,7 +94,7 @@
                 <br>
 
                 <!-- ETHNICITY -->
-                <div class="col-sm-12" ng-class="{ 'has-error' : form.ethnicity_race.$invalid && !form.ethnicity_race.$pristine }">
+                <div class="col-sm-6" ng-class="{ 'has-error' : form.ethnicity_race.$invalid && !form.ethnicity_race.$pristine }">
                     <label>What is your race?</label>
                     <div class="form-check">
                       <input type="radio" ng-model="main.registration_data.ethnicity_race" class="form-check-input" id="white" name="ethnicity_race" value="white" checked>
@@ -95,9 +122,6 @@
                     </div>
                 </div>
 
-
-                <div class="clearfix"></div>
-                <br>
 
 
                 <!-- Hispanic Origin -->

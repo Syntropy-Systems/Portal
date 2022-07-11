@@ -41,6 +41,9 @@ class User(AbstractBaseUser):
 	fullname = models.CharField(max_length = 50, null = False, blank = False)
 
 	address = models.TextField(null = True,blank = True)
+	country = models.TextField(null = True,blank = True)
+	city = models.TextField(null = True,blank = True)
+	zip_code = models.TextField(null = True,blank = True)
 
 	gender = models.CharField(max_length = 50, null = False, blank = False)
 	other_gender = models.CharField(max_length = 50, null = True, blank = True)
