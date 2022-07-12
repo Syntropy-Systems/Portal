@@ -16,8 +16,10 @@ import dj_database_url
 
 ENVIRONMENT = os.getenv("ENVIRONMENT","localhost")
 if ENVIRONMENT == "production":
-    from root.project_settings.production import *    
-
+    DEBUG = os.environ.get("DEBUG",True)
+    SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY",None)
+    ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS",None)
+    
     DATABASES = {
         "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
     }
