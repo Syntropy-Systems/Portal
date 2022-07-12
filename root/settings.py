@@ -16,12 +16,12 @@ import dj_database_url
 
 ENVIRONMENT = os.getenv("ENVIRONMENT","localhost")
 if ENVIRONMENT == "production":
-    DEBUG = os.environ.get("DEBUG",True)
-    SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY",None)
-    ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS",None)
+    DEBUG = os.getenv("DEBUG",True)
+    SECRET_KEY = os.getenv("DJANGO_SECRET_KEY",None)
+    ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",None)
     
     DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+        "default": dj_database_url.parse(os.getenv("DATABASE_URL")),
     }
 
 else:
