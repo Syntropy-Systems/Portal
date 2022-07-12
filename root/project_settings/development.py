@@ -7,3 +7,17 @@ DB_NAME = "syntropy"
 DB_USER = "postgres"
 DB_PASSWORD = "123123"
 DB_HOST = "localhost"
+
+
+# Database
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST' : DB_HOST,
+        'PORT' : '',
+    }
+}
