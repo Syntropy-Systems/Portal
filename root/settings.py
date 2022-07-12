@@ -20,15 +20,34 @@ if ENVIRONMENT == "production":
     SECRET_KEY = os.getenv("DJANGO_SECRET_KEY",None)
     ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",None)
 
-    print("---")
-    print(os.getenv("DATABASE_URL"))
-    print("xx")
-    print(dj_database_url.parse(os.environ.get("DATABASE_URL")))
-    print(dj_database_url.parse(os.getenv("DATABASE_URL")))
-    print("---22")
+    # print("---")
+    # print(os.getenv("DATABASE_URL"))
+    # print("xx")
+    # print(dj_database_url.parse(os.environ.get("DATABASE_URL")))
+    # print(dj_database_url.parse(os.getenv("DATABASE_URL")))
+    # print("---22")
 
+    # DATABASES = {
+    #     "default": dj_database_url.parse(os.getenv("DATABASE_URL")),
+    # }
+
+    DB_NAME = "syntropy"
+    DB_USER = "postgres"
+    DB_PASSWORD = "123123"
+    DB_HOST = "localhost"
+
+
+    # Database
+    # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
     DATABASES = {
-        "default": dj_database_url.parse(os.getenv("DATABASE_URL")),
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': DB_NAME,
+            'USER': DB_USER,
+            'PASSWORD': DB_PASSWORD,
+            'HOST' : DB_HOST,
+            'PORT' : '',
+        }
     }
 
 else:
