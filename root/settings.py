@@ -45,16 +45,16 @@ INSTALLED_APPS = [
 ]
 
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'project.middleware.user_middleware.User_middleware',
+    'project.middleware.user_middleware.UserMiddleware',
 ]
 
 ROOT_URLCONF = 'root.urls'
@@ -131,8 +131,8 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/static/uploads/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'project/static/uploads')
+MEDIA_URL = '/uploadedfiles/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'project/uploadedfiles')
 
 
 ERROR_LEVEL = 'WARNING' # DEBUG -> INFO -> WARNING -> ERROR -> CRITICAL
