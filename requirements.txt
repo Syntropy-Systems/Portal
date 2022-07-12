@@ -14,3 +14,5 @@ djangorestframework
 django-environ
 dj_database_url
 gunicorn
+
+#gunicorn --worker-tmp-dir /dev/project root.wsgi
