@@ -13,3 +13,4 @@ djangorestframework
 
 django-environ
 dj_database_url
+gunicorn
