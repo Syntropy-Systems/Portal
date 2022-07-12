@@ -1,8 +1,9 @@
 from django.shortcuts import redirect
 from ..views.common import *
 import json
+from django.utils.deprecation import MiddlewareMixin
 
-class User_middleware(object):
+class UserMiddleware(MiddlewareMixin):
 	"""Checks if the user is allowed to access the page they are requesting."""
 
 	def process_request(self, request):

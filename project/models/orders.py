@@ -3,7 +3,7 @@ from project.views.common import *
 from project.models.common import *
 
 class Order(models.Model):
-	client = models.ForeignKey("User",related_name = "Own_by")
+	client = models.ForeignKey("User",related_name = "Own_by",on_delete = models.PROTECT)
 	date = models.DateField(null = True)
 
 	available_capacity = models.IntegerField(null = True,blank = True)
@@ -34,7 +34,7 @@ class Order(models.Model):
 
 
 class TopSite(models.Model):
-	order = models.ForeignKey("Order")
+	order = models.ForeignKey("Order",on_delete = models.PROTECT)
 	title = models.TextField()
 	url = models.TextField()
 

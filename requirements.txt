@@ -1,5 +1,5 @@
 #sudo apt-get install postgresql postgresql-contrib libpq-dev python-dev
-django==1.11
+django==2.2
 
 pilkit==2.0
 Pillow==5.2.0
@@ -8,19 +8,7 @@ psycopg2==2.7.5
 
 django-imagekit
 django-mail_templated
-xlsxwriter==0.9.3
-djangorestframework==3.3.3
+xlsxwriter
+djangorestframework
 
-#====================
-# DEVELOPMENT
-#====================
-
-#django-debug-panel==0.8.3
-#django-debug-toolbar==1.6
-
-#Note
-#django-appconf==1.0.3
-
-
-#Run this in Python 2.7
-#mkvirtualenv -p /usr/bin/python2.7 <ENV_NAME>
+django-environ
