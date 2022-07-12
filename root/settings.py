@@ -22,6 +22,7 @@ if ENVIRONMENT == "production":
 
     print("---")
     print(os.getenv("DATABASE_URL"))
+    print("xx")
     print(dj_database_url.parse(os.getenv("DATABASE_URL")))
     print("---22")
 
