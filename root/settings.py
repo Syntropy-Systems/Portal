@@ -12,21 +12,15 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from .local_settings import *
-# from cloghandler import ConcurrentRotatingFileHandler
+
+
+ENVIRONMENT = os.environ.get("SECRET_KEY","localhost")
+if ENVIRONMENT == "production":
+    from root.project_settings.production import *    
+else:
+    from root.project_settings.development import *   
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ew*32x_+=b-g=4g%)111o2isb+)zn(^$6b#wtq_geuf9fy8@jocc%='
-PRECISION = 2
-DESIGN_STATE = 1 #1 for default and 2 for inspinia
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -57,7 +51,6 @@ MIDDLEWARE = [
     'project.middleware.user_middleware.UserMiddleware',
 ]
 
-ROOT_URLCONF = 'root.urls'
 
 TEMPLATES = [
     {
@@ -75,31 +68,9 @@ TEMPLATES = [
     },
 ]
 
-
+ROOT_URLCONF = 'root.urls'
 AUTH_USER_MODEL = 'project.User'
 WSGI_APPLICATION = 'root.wsgi.application'
-
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-
-"""Make a file called 'local_settings.py' in the same folder as 'settings.py' and have this as its contents:
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': name,
-        'USER': user,
-        'PASSWORD': password,
-        'HOST' : host,
-        'PORT' : '',
-    }
-}
-# env = None
-
-
-
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -139,33 +110,23 @@ ERROR_LEVEL = 'WARNING' # DEBUG -> INFO -> WARNING -> ERROR -> CRITICAL
 CORS_ORIGIN_ALLOW_ALL = True
 
 
-
-
-ENVIRONMENT = env
-DEBUG = True
-ALLOWED_HOSTS = []
-
-if ENVIRONMENT == "production":
-    DEBUG = False
-    ALLOWED_HOSTS = ["*"]
-
-    STATIC_URL = '/static_cdn/'
-    STATIC_ROOT = "/home/dev/static_cdn"
-
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = "/home/dev/static_cdn/uploads"
-    
-else:
-    # INSTALLED_APPS += ["debug_toolbar","debug_panel",]
-    # MIDDLEWARE_CLASSES += ('debug_panel.middleware.DebugPanelMiddleware',)
-    INTERNAL_IPS = ('localhost','127.0.0.1','127.0.0.1:8000','127.0.0.1:9000')
-    DEBUG = True
-    ALLOWED_HOSTS = ["*"]
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated', )
+} 
+
+# Database
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST' : DB_HOST,
+        'PORT' : '',
+    }
 }

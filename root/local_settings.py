@@ -1,5 +1,0 @@
-name = "syntropy"
-user = "postgres"
-password = "123123"
-host = "localhost"
-env = "localhost"
