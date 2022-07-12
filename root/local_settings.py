@@ -1,4 +1,4 @@
-name = "brendan2"
+name = "syntropy"
 user = "postgres"
 password = "123123"
 host = "localhost"
