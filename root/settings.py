@@ -19,7 +19,11 @@ if ENVIRONMENT == "production":
     DEBUG = os.getenv("DEBUG",True)
     SECRET_KEY = os.getenv("DJANGO_SECRET_KEY",None)
     ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",None)
-    
+
+    print("---")
+    print(os.getenv("DATABASE_URL"))
+    print("---22")
+
     DATABASES = {
         "default": dj_database_url.parse(os.getenv("DATABASE_URL")),
     }
