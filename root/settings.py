@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 
-ENVIRONMENT = os.environ.get("SECRET_KEY","localhost")
+ENVIRONMENT = os.getenv("SECRET_KEY","localhost")
 if ENVIRONMENT == "production":
     from root.project_settings.production import *    
 else:
