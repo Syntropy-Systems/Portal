@@ -21,25 +21,21 @@ if ENVIRONMENT == "production":
     ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",None)
 
 
-    DB_HOST = os.getenv("DB_HOST")
-    DB_PORT = os.getenv("DB_PORT")
-    DB_USER = os.getenv("DB_USER")
-    DB_PASSWORD = os.getenv("DB_PASSWORD")
-    DB_NAME = os.getenv("DB_NAME")
+    DB_INFO = {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST' : os.getenv("DB_HOST"),
+        'PORT' : os.getenv("DB_PORT"),
+        'OPTIONS': {"sslmode": 'require'}
+    }
 
-
+    print(DB_INFO)
     # Database
     # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': DB_NAME,
-            'USER': DB_USER,
-            'PASSWORD': DB_PASSWORD,
-            'HOST' : DB_HOST,
-            'PORT' : DB_PORT,
-            'OPTIONS': {"sslmode": 'require'}
-        }
+        'default': DB_INFO
     }
 
 else:
