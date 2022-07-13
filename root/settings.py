@@ -21,21 +21,11 @@ if ENVIRONMENT == "production":
     ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",None)
 
 
-    DB_URL = os.getenv("DATABASE_URL")
-    print("--11")
-    print(DB_URL)
-    print("xx2")
-    print(dj_database_url.parse(DB_URL))
-    print("---22")
-
-    DATABASES = {
-        "default": dj_database_url.parse(DB_URL),
-    }
-
-    DB_NAME = "syntropy"
-    DB_USER = "postgres"
-    DB_PASSWORD = "123123"
-    DB_HOST = "localhost"
+    DB_HOST = os.getenv("DB_HOST")
+    DB_PORT = os.getenv("DB_PORT")
+    DB_USER = os.getenv("DB_USER")
+    DB_PASSWORD = os.getenv("DB_PASSWORD")
+    DB_NAME = os.getenv("DB_NAME")
 
 
     # Database
@@ -47,7 +37,8 @@ if ENVIRONMENT == "production":
             'USER': DB_USER,
             'PASSWORD': DB_PASSWORD,
             'HOST' : DB_HOST,
-            'PORT' : '',
+            'PORT' : DB_PORT,
+            'OPTIONS': {"sslmode": 'require'}
         }
     }
 
