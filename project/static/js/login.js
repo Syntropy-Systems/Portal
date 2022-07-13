@@ -18,20 +18,20 @@ app.controller('loginCtrl', function($scope,$http,$controller,CommonFunc,CommonR
 		rand_num = Math.floor(Math.random() * 10000)
 
 		me.registration_data = {};
-		me.registration_data["email"] = "testemail"+rand_num+"@gmail.com"
-		me.registration_data["firstname"] = "Alde"
-		me.registration_data["lastname"] = "Sabido"
-		me.registration_data["address"] = "Address"
-		me.registration_data["country"] = "State"
-		me.registration_data["city"] = "City"
-		me.registration_data["zip_code"] = "98899"
-		me.registration_data["gender"] = "male"
-		me.registration_data["birthdate"] = new Date(moment());
-		me.registration_data["ethnicity_race"] = "asian"
-		me.registration_data["ethnicity_hispanic_origin"] = "false"
-		me.registration_data["occupation"] = "in_person"
-		me.registration_data["password"] = "123123"
-		me.registration_data["repassword"] = "123123"
+		// me.registration_data["email"] = "testemail"+rand_num+"@gmail.com"
+		// me.registration_data["firstname"] = "Alde"
+		// me.registration_data["lastname"] = "Sabido"
+		// me.registration_data["address"] = "Address"
+		// me.registration_data["country"] = "State"
+		// me.registration_data["city"] = "City"
+		// me.registration_data["zip_code"] = "98899"
+		// me.registration_data["gender"] = "male"
+		// me.registration_data["birthdate"] = new Date(moment());
+		// me.registration_data["ethnicity_race"] = "asian"
+		// me.registration_data["ethnicity_hispanic_origin"] = "false"
+		// me.registration_data["occupation"] = "in_person"
+		// me.registration_data["password"] = "123123"
+		// me.registration_data["repassword"] = "123123"
 
 
 		me.open_dialog("/register/create_dialog/","dialog_height_60 dialog_width_40");

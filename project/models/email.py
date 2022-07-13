@@ -28,10 +28,11 @@ class Send_email(models.Model):
 
 		params['url'] = base_url+url
 
-		recipients = ["aldesabido@gmail.com"]
+		recipients = [instance.email]
 		if settings.ENVIRONMENT != "production":
 			bccs = []  
 			recipients = ["aldesabido@gmail.com",]  
+
 
 		# instance.activate_token = token
 		# super(User, instance).save()
