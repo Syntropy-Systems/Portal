@@ -20,6 +20,8 @@ if ENVIRONMENT == "production":
     SECRET_KEY = os.getenv("DJANGO_SECRET_KEY",None)
     ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",None)
 
+    ALLOWED_HOSTS = ["*"]
+
 
     DB_INFO = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
