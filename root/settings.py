@@ -33,19 +33,15 @@ if ENVIRONMENT == "production":
         'OPTIONS': {"sslmode": 'require'}
     }
 
-    print(DEBUG)
-    print(ALLOWED_HOSTS)
-    print(SECRET_KEY)
-    print(DB_INFO)
     # Database
     # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-    # DATABASES = {
-    #     'default': DB_INFO
-    # }
-
     DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+        'default': DB_INFO
     }
+
+    # DATABASES = {
+    #     "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    # }
 
 else:
     from root.project_settings.development import *   
