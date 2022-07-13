@@ -23,7 +23,10 @@ def read_pagination(request,from_export = False,filters = {}):
 			filters["client__fullname__icontains"] = name_search
 
 		results = {"data" : []}
-		records = Order.objects.filter(**filters).order_by(*sort_by)
+		records = Order.objects.filter(**filters) \
+						.select_related("client") \
+						.order_by(*sort_by)
+
 
 		if not user_instance.is_developer:
 			records = records.filter(client = user_instance.pk)
@@ -33,7 +36,22 @@ def read_pagination(request,from_export = False,filters = {}):
 			records = records[results['starting']:results['ending']]
 
 		for record in records:
+
 			row = record.as_dict()
+
+			row["available_capacity"] = round(row["available_capacity"],2)
+			row["capacity"] = round(row["capacity"],2)
+			
+			user_dict = row.get("client")
+			if user_dict.get("occupation") == "in_person":
+				row["client"]["occupation"] = "In Person"
+			elif user_dict.get("occupation") == "remote":
+				row["client"]["occupation"] = "Remote"
+			else:
+				row["client"]["occupation"] = "Hybrid"
+
+			
+			row["client"]["ethnicity_hispanic_origin"] = "Yes" if user_dict.get("ethnicity_hispanic_origin") else "No"
 			row["top_sites"] = record.get_top_sites()
 
 			results["data"].append(row)
@@ -63,34 +81,59 @@ def export(request):
 		worksheet.set_column(0,0,15) 
 		worksheet.write(row,1,"Client",get_format(workbook,*["bold"])) 
 		worksheet.set_column(1,1,25) 
-		worksheet.write(row,2,"Available Capacity",get_format(workbook,*["bold"])) 
-		worksheet.set_column(2,2,15) 
-		worksheet.write(row,3,"Capacity",get_format(workbook,*["bold"])) 
-		worksheet.set_column(3,3,15) 
-		worksheet.write(row,4,"Site Name",get_format(workbook,*["bold"])) 
-		worksheet.set_column(4,4,30) 
-		worksheet.write(row,5,"Site URL",get_format(workbook,*["bold"])) 
-		worksheet.set_column(5,5,30) 
 
+		worksheet.write(row,2,"Address",get_format(workbook,*["bold"])) 
+		worksheet.set_column(2,2,25) 
+
+		worksheet.write(row,3,"Gender",get_format(workbook,*["bold"])) 
+		worksheet.set_column(3,3,15) 
+
+		worksheet.write(row,4,"Race",get_format(workbook,*["bold"])) 
+		worksheet.set_column(4,4,15) 
+
+		worksheet.write(row,5,"Hispanic Origin",get_format(workbook,*["bold"])) 
+		worksheet.set_column(5,5,15) 
+
+		worksheet.write(row,6,"Occupation",get_format(workbook,*["bold"])) 
+		worksheet.set_column(6,6,15) 
+
+		worksheet.write(row,7,"Birthdate",get_format(workbook,*["bold"])) 
+		worksheet.set_column(7,7,15) 
+
+
+		worksheet.write(row,8,"Available Capacity",get_format(workbook,*["bold"])) 
+		worksheet.set_column(8,8,15) 
+		worksheet.write(row,9,"Capacity",get_format(workbook,*["bold"])) 
+		worksheet.set_column(9,9,15) 
+		worksheet.write(row,10,"Site Name",get_format(workbook,*["bold"])) 
+		worksheet.set_column(10,10,30) 
+		worksheet.write(row,11,"Site URL",get_format(workbook,*["bold"])) 
+		worksheet.set_column(11,11,30) 
 
 		for record in records:
 			row += 1 
 
 			date = str(date_to_str(record["date"],format = "%m/%d/%Y"))
+			birthdate = str(date_to_str(record["client"]["birthdate"],format = "%m/%d/%Y"))
 			worksheet.write(row,0,date,get_format(workbook,*[])) 
 			worksheet.write(row,1,record["client"]["fullname"],get_format(workbook,*[])) 
-			worksheet.write(row,2,record["available_capacity"],get_format(workbook,*[])) 
-			worksheet.write(row,3,record["capacity"],get_format(workbook,*[]))
+			worksheet.write(row,2,record["client"]["address"],get_format(workbook,*[])) 
+			worksheet.write(row,3,record["client"]["gender"],get_format(workbook,*[])) 
+			worksheet.write(row,4,record["client"]["ethnicity_race"],get_format(workbook,*[])) 
+			worksheet.write(row,5,record["client"]["ethnicity_hispanic_origin"],get_format(workbook,*[])) 
+			worksheet.write(row,6,record["client"]["occupation"],get_format(workbook,*[])) 
+			worksheet.write(row,7,birthdate,get_format(workbook,*[])) 
+			worksheet.write(row,8,record["available_capacity"],get_format(workbook,*[])) 
+			worksheet.write(row,9,record["capacity"],get_format(workbook,*[]))
 
 			top_sites = record.get("top_sites",[])
 
 			current_row = row
-			print(current_row)
 			for top_site in top_sites:
 				current_row += 1
 
-				worksheet.write(current_row,4,top_site["title"],get_format(workbook,*[]))
-				worksheet.write(current_row,5,top_site["url"],get_format(workbook,*[]))
+				worksheet.write(current_row,10,top_site["title"],get_format(workbook,*[]))
+				worksheet.write(current_row,11,top_site["url"],get_format(workbook,*[]))
 
 			row = current_row
 

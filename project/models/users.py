@@ -86,13 +86,7 @@ class User(AbstractBaseUser):
 			self._old_password = None
 
 	def as_dict(self):
-		return {
-			"id": self.pk,
-			"email": self.email,
-			"fullname": self.fullname,
-			"address": self.address,
-			"is_active": self.is_active,
-		}
+		return model_to_dict(self)
 
 	def save(self, *args, **kwargs):
 		if self._old_password is None or self._old_password != self.password:

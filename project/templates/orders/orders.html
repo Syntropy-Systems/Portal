@@ -26,6 +26,14 @@
                         <tr class="hdr_border_r">
                             <th custom-sort order="date">Date</th>
                             <th custom-sort order="client__fullname">Client</th>
+                            
+                            <th>Address</th>
+                            <th>Gender</th>
+                            <th>Race</th>
+                            <th>Hispanic Origin</th>
+                            <th>Occupation</th>
+                            <th>Birthdate</th>
+
                             <th>Available Capacity</th>
                             <th>Capacity</th>
                             <th>Top Sites</th>
@@ -33,21 +41,18 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="record in main.records" ng-class="(record.is_rush) ? 'rushighlight hand_cursor' : (record.is_duplicate_address) ? 'duplicate_address hand_cursor' : 'tr_gray hand_cursor'"  >
-                            <td>
-                                <span>{$ record.date |  date $}</span>
-                            </td>
+                            <td>{$ record.date |  date $}</td>
+                            <td>{$ record.client.fullname $}</td>
 
-                            <td>
-                                <span>{$ record.client.fullname $}</span>
-                            </td>
+                            <td>{$ record.client.address $}</td>
+                            <td>{$ record.client.gender | capitalize $}</td>
+                            <td>{$ record.client.ethnicity_race | capitalize $}</td>
+                            <td>{$ record.client.ethnicity_hispanic_origin $}</td>
+                            <td>{$ record.client.occupation $}</td>
+                            <td>{$ record.client.birthdate | date $}</td>
 
-                            <td>
-                                <span>{$ record.available_capacity $} GB</span>
-                            </td>
-
-                            <td>
-                                <span>{$ record.capacity $} GB</span>
-                            </td>
+                            <td>{$ record.available_capacity $} GB</td>
+                            <td>{$ record.capacity $} GB</td>
 
                             <td>
                                 <span ng-repeat="topsite in record.top_sites">

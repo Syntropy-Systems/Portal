@@ -94,15 +94,12 @@ def activate_account(request,token):
 	try:
 
 		uid = str_base64_decode(urlsafe_base64_decode(token))
-		dprint(uid)
 		uid = int(uid)
 
 		try: 
 			user = User.objects.get(pk=uid) 
 		except User.DoesNotExist: 
 			raise_error("Confirmation code not found.")
-
-		dprint(user)
 
 		if user.activated:
 			raise_error("This account is already active.")
