@@ -36,25 +36,25 @@ class User_Manager(BaseUserManager):
 class User(AbstractBaseUser):
 	email = models.EmailField(max_length = 254, null = False, blank = False, unique = True)
 
-	firstname = models.TextField()
-	lastname = models.TextField()
-	fullname = models.CharField(max_length = 50, null = False, blank = False)
+	firstname = models.TextField(null = True,blank = False)
+	lastname = models.TextField(null = True,blank = False)
+	fullname = models.CharField(max_length = 50, null = True, blank = False)
 
 	address = models.TextField(null = True,blank = True)
 	country = models.TextField(null = True,blank = True)
 	city = models.TextField(null = True,blank = True)
 	zip_code = models.TextField(null = True,blank = True)
 
-	gender = models.CharField(max_length = 50, null = False, blank = False)
+	gender = models.CharField(max_length = 50, null = True, blank = False)
 	other_gender = models.CharField(max_length = 50, null = True, blank = True)
 
 
-	birthdate = models.DateField()
+	birthdate = models.DateField(null = True,blank = False)
 
-	ethnicity_race = models.CharField(max_length = 50)
-	ethnicity_hispanic_origin = models.BooleanField(default=False)
+	ethnicity_race = models.CharField(max_length = 50,null = True,blank = False)
+	ethnicity_hispanic_origin = models.BooleanField(default=False,null = True,blank = False)
 
-	occupation = models.CharField(max_length = 50, null = False, blank = False)
+	occupation = models.CharField(max_length = 50, null = True, blank = False)
 
 	is_active = models.BooleanField(default = True)
 	created_on = models.DateTimeField(auto_now_add = True)
