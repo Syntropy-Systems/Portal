@@ -25,6 +25,7 @@ class UserMiddleware(MiddlewareMixin):
 			"login",
 			"logout",
 			"landingpage",
+			"activate_account",
 		]
 
 		no_action = [

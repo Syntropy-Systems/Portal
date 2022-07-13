@@ -47,7 +47,6 @@ else:
     from root.project_settings.development import *   
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,8 +118,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'weprobpo.market@gmail.com'
-EMAIL_HOST_PASSWORD = 'prqzzbdluagxcmnu'
+EMAIL_HOST_USER = 'aldesabido@gmail.com'
+EMAIL_HOST_PASSWORD = 'qlkboyrkigtxunph'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 

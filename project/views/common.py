@@ -23,8 +23,13 @@ from django.utils import timezone
 from mail_templated import send_mail
 from django.apps import apps
 from django.views.decorators.http import require_GET, require_POST
+from django.utils.http import (
+	urlsafe_base64_encode,
+	urlsafe_base64_decode,
+)
 import io
 import xlsxwriter
+import base64
 
 
 '''
@@ -454,3 +459,20 @@ def date_range_filter(filters,date_field = "date",date_from = "date_from",date_t
 		filters[date_field+'__lte'] = date_to
 
 	return filters
+
+
+def str_base64_encode(_str):
+	message_bytes = _str.encode('ascii')
+	base64_bytes = base64.b64encode(message_bytes)
+	# base64_message = base64_bytes.decode('ascii')
+
+	return base64_bytes
+
+
+def str_base64_decode(_str):
+	# base64_bytes = _str.encode('ascii')
+	base64_bytes = _str
+	message_bytes = base64.b64decode(base64_bytes)
+	message = message_bytes.decode('ascii')
+
+	return message

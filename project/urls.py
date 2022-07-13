@@ -23,6 +23,8 @@ urlpatterns = [
 	url(r'^register/create_dialog/$', index.registration_dialog),
 	url(r'^register/$', index.register),
 	url(r'^user_update/$', index.register),
+	# url(r'^activate_account/(?P<token>[0-9]+)/$', index.activate_account),
+	url(r'^activate_account/(?P<token>[0-9A-Za-z_\-]+)/$', index.activate_account),
 
 
 	#Common Requests & Common templates

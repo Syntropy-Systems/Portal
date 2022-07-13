@@ -56,7 +56,10 @@ class User(AbstractBaseUser):
 
 	occupation = models.CharField(max_length = 50, null = True, blank = False)
 
+	activate_token = models.TextField(null = True)
+
 	is_active = models.BooleanField(default = True)
+	activated = models.BooleanField(default = False)
 	created_on = models.DateTimeField(auto_now_add = True)
 
 	#Must have fields for Admin

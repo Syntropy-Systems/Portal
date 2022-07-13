@@ -15,11 +15,16 @@ app.controller('loginCtrl', function($scope,$http,$controller,CommonFunc,CommonR
 	}
 
 	me.registration_dialog = function(){
+		rand_num = Math.floor(Math.random() * 10000)
+
 		me.registration_data = {};
-		me.registration_data["email"] = "testemail@gmail.com"
-		me.registration_data["firstname"] = "Test First Name"
-		me.registration_data["lastname"] = "Test Last Name"
-		me.registration_data["address"] = "Test Address"
+		me.registration_data["email"] = "testemail"+rand_num+"@gmail.com"
+		me.registration_data["firstname"] = "Alde"
+		me.registration_data["lastname"] = "Sabido"
+		me.registration_data["address"] = "Address"
+		me.registration_data["country"] = "State"
+		me.registration_data["city"] = "City"
+		me.registration_data["zip_code"] = "98899"
 		me.registration_data["gender"] = "male"
 		me.registration_data["birthdate"] = new Date(moment());
 		me.registration_data["ethnicity_race"] = "asian"
