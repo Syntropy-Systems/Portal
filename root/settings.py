@@ -39,8 +39,12 @@ if ENVIRONMENT == "production":
     print(DB_INFO)
     # Database
     # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+    # DATABASES = {
+    #     'default': DB_INFO
+    # }
+
     DATABASES = {
-        'default': DB_INFO
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
     }
 
 else:
