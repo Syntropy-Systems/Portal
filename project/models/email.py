@@ -25,6 +25,7 @@ class Send_email(models.Model):
 
 		url = "/activate_account/%s/"%(token) 
 		base_url = "http://localhost:8000" 
+		base_url = "https://oyster-app-m35t8.ondigitalocean.app" 
 
 		params['url'] = base_url+url
 
