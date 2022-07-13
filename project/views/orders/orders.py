@@ -11,6 +11,7 @@ def read_pagination(request,from_export = False,filters = {}):
 			filters = post_data(request)
 			pagination = filters.pop("pagination",None)
 		
+		user_instance = request.user
 		sort_by = generate_sorting(filters.pop("sort",None))
 
 		status = filters.pop("status",None)
@@ -23,6 +24,9 @@ def read_pagination(request,from_export = False,filters = {}):
 
 		results = {"data" : []}
 		records = Order.objects.filter(**filters).order_by(*sort_by)
+
+		if not user_instance.is_developer:
+			records = records.filter(client = user_instance.pk)
 
 		if not from_export:
 			results.update(generate_pagination(pagination,records))

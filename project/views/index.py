@@ -39,7 +39,7 @@ def login(request):
 				if not user.is_active:
 					raise ValueError("This user is inactive. Kindly contact your admin at aldesabido@gmail.com")
 
-				if not user.activated:
+				if not user.activated and not user.is_developer:
 					raise ValueError("Your account is still not activated. Kindly check your email to verify.")
 
 				loginn(request, user)
@@ -125,9 +125,15 @@ def activate_account(request,token):
 
 @require_GET
 def logout(request):
+	# response = HttpResponse('Successfully logged out. Redirecting...')
+
 	request.session.clear()
 	logoutt(request)
-	return redirect("loginpage")
+
+	response = redirect("loginpage")
+	response.delete_cookie('token')
+	
+	return response
 
 #BPO
 @require_GET

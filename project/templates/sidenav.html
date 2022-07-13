@@ -6,6 +6,8 @@
                     <a href="#orders"><i class="fa fa-user"></i> <span class="nav-label">Data</span></a>
                 </li>
 
+                {% if request.user.is_developer %}
+
                 <li ng-class="wrapper.current_page == 'users' ? 'active': ''">
                     <a href="#users"><i class="fa fa-users"></i> 
                         <span class="nav-label">
@@ -13,6 +15,8 @@
                         </span>
                     </a>
                 </li>
+
+                {% endif %}
             </ul>
         </div>
     </div>

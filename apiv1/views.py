@@ -101,7 +101,7 @@ class Data(APIView):
 
 	    	order_instances = Order.objects.filter(date = date_now,client = user_instance.pk)
 
-	    	if not order_instances.exists() or True:
+	    	if not order_instances.exists():
 	    		instance = Order.objects.create(**{
 	    			"client": user_instance,
 	    			"date": date_now,

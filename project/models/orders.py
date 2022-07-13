@@ -6,8 +6,8 @@ class Order(models.Model):
 	client = models.ForeignKey("User",related_name = "Own_by",on_delete = models.PROTECT)
 	date = models.DateField(null = True)
 
-	available_capacity = models.IntegerField(null = True,blank = True)
-	capacity = models.IntegerField(null = True,blank = True)
+	available_capacity = models.FloatField(null = True,blank = True)
+	capacity = models.FloatField(null = True,blank = True)
 
 	is_deleted = models.BooleanField(default = False)
 
