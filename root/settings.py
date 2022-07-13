@@ -31,6 +31,9 @@ if ENVIRONMENT == "production":
         'OPTIONS': {"sslmode": 'require'}
     }
 
+    print(DEBUG)
+    print(ALLOWED_HOSTS)
+    print(SECRET_KEY)
     print(DB_INFO)
     # Database
     # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
