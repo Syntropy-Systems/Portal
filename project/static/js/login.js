@@ -43,7 +43,7 @@ app.controller('loginCtrl', function($scope,$http,$controller,CommonFunc,CommonR
 
 		var post = me.post_generic("/register/",registration_data,"dialog")
 		post.success(function(response){
-			Notification.success("Thank you for choosing Syntropy!.","Successfully registered.",10000000);
+			Notification.success("Thank you for choosing Syntropy!","Successfully registered.",10000000);
 			me.close_dialog();
 		})
 
