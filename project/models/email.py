@@ -1,11 +1,7 @@
 from project.views.common import *
 from project.models.users import User
 
-recipients = ["weprobpo@gmail.com",]
-
-
 class Send_email(models.Model):
-	recipients = ["aldesabido@gmail.com",]
 
 	def new_client_notification(self,instance):
 		template_url = "email_templates/new_client.tpl"
@@ -29,7 +25,7 @@ class Send_email(models.Model):
 
 		params['url'] = base_url+url
 
-		recipients = ["aldesabido@gmail.com"]
+		recipients = [instance.email]
 		if settings.ENVIRONMENT != "production":
 			bccs = []  
 			recipients = ["aldesabido@gmail.com",]  
@@ -37,4 +33,4 @@ class Send_email(models.Model):
 		# instance.activate_token = token
 		# super(User, instance).save()
 
-		send_mail(template_url,params,"Syntropy <aldesabido@gmail.com>",recipients)
+		send_mail(template_url,params,"Syntropy <brendan@syntropy.systems>",recipients)
