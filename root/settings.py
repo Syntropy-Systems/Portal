@@ -39,12 +39,24 @@ if ENVIRONMENT == "production":
         'default': DB_INFO
     }
 
-    # DATABASES = {
-    #     "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-    # }
+    # POSTMARK_API_KEY = '346d37ef-d2fa-4ab1-ba50-9e3c31d389f7'
+    EMAIL_BACKEND = 'postmarker.django.EmailBackend'
+    POSTMARK = {
+        'TOKEN': os.getenv("POSTMARK_API_KEY"),
+        'TEST_MODE': False,
+        'VERBOSITY': 0,
+    }
 
 else:
     from root.project_settings.development import *   
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = 'aldesabido@gmail.com'
+    EMAIL_HOST_PASSWORD = 'qlkboyrkigtxunph'
+    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+    
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INSTALLED_APPS = [
@@ -114,13 +126,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'aldesabido@gmail.com'
-EMAIL_HOST_PASSWORD = 'qlkboyrkigtxunph'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 
 

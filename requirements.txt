@@ -14,5 +14,7 @@ djangorestframework
 django-environ
 dj_database_url
 gunicorn
+django-postmark==0.1.6
+postmarker==1.0
 
 #gunicorn --worker-tmp-dir /dev/project root.wsgi
